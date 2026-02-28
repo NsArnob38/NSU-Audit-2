@@ -1,0 +1,26 @@
+course_code,course_name,credits,grade,semester
+ENG111,Public Speaking,3,W,Summer2021
+MAT350,Probability & Statistics,3,C,Summer2021
+CSE299,Junior Design Project,1,C-,Summer2021
+PHY108,Physics II,3,C,Summer2021
+CSE145,Introduction to Artificial Intelligence,3,F,Summer2021
+EEE111,Analog Electronics I,3,D+,Summer2021
+CSE499A,Senior Capstone Design I,2,W,Summer2021
+CSE327,Software Engineering,3,W,Fall2021
+CSE311,Database Management Systems,3,W,Fall2021
+PHI104,Introduction to Ethics,3,W,Fall2021
+PHY108L,Physics II Lab,1,D+,Fall2021
+CSE226,Fundamentals of Vibe Coding,3,F,Fall2021
+ENV203,Environmental Studies,3,F,Fall2021
+CSE225,Data Structures & Algorithms,3,C-,Spring2022
+CSE231L,Digital Logic Design Lab,1,F,Spring2022
+MAT120,Calculus I,3,F,Spring2022
+CEE110,Engineering Drawing,1,F,Spring2022
+HIS102,World Civilization,3,D+,Spring2022
+CSE331L,Microprocessor Interfacing Lab,1,D,Spring2022
+CSE425,Concepts of Programming Languages,3,D,Spring2022
+EEE141L,Electrical Circuits I Lab,1,C-,Spring2022
+POL101,Intro to Political Science,3,W,Spring2022
+CSE331L,Microprocessor Interfacing Lab,1,D,Fall2022
+CSE226,Fundamentals of Vibe Coding,3,D+,Summer2023
+CSE231L,Digital Logic Design Lab,1,B,Summer2024

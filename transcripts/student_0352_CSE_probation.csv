@@ -1,0 +1,55 @@
+course_code,course_name,credits,grade,semester
+CSE311,Database Management Systems,3,D+,Summer2021
+MAT250,Calculus III,3,D+,Summer2021
+CSE499B,Senior Capstone Design II,2,D,Summer2021
+ENG103,Intermediate Composition,3,F,Summer2021
+HIS101,Bangladesh History,3,D+,Fall2021
+CSE373,Design & Analysis of Algorithms,3,C-,Fall2021
+CSE299,Junior Design Project,1,F,Fall2021
+ENG105,Advanced Composition,3,F,Fall2021
+BIO103L,Biology I Lab,1,D,Fall2021
+SOC101,Intro to Sociology,3,D+,Fall2021
+CSE331L,Microprocessor Interfacing Lab,1,D,Spring2022
+CSE145,Introduction to Artificial Intelligence,3,D,Spring2022
+BIO103L,Biology I Lab,1,B-,Spring2022
+CSE225,Data Structures & Algorithms,3,D+,Spring2022
+CSE115L,Programming Language I Lab,1,F,Summer2022
+CSE499B,Senior Capstone Design II,2,D+,Summer2022
+CSE425,Concepts of Programming Languages,3,F,Summer2022
+CSE226,Fundamentals of Vibe Coding,3,D,Summer2022
+ECO101,Intro to Microeconomics,3,D+,Summer2022
+POL101,Intro to Political Science,3,D,Summer2022
+CSE331L,Microprocessor Interfacing Lab,1,D+,Fall2022
+EEE141L,Electrical Circuits I Lab,1,F,Fall2022
+CSE225L,Data Structures & Algorithms Lab,1,D,Fall2022
+CSE115L,Programming Language I Lab,1,D+,Fall2022
+CSE173,Discrete Mathematics,3,D,Fall2022
+EEE111L,Analog Electronics I Lab,1,I,Fall2022
+MAT361,Differential Equations,3,D,Fall2022
+CSE226,Fundamentals of Vibe Coding,3,C+,Fall2022
+EEE111,Analog Electronics I,3,D,Fall2022
+CHE101,Chemistry I,3,D+,Spring2023
+CSE499A,Senior Capstone Design I,2,D,Spring2023
+CSE332,Computer Organization & Architecture,3,I,Spring2023
+CSE231,Digital Logic Design,3,F,Summer2023
+PHY108,Physics II,3,D+,Summer2023
+BIO103,Biology I,3,D+,Summer2023
+CSE332,Computer Organization & Architecture,3,C+,Summer2023
+CSE311L,Database Management Systems Lab,1,D,Fall2023
+CSE299,Junior Design Project,1,C,Fall2023
+ENG111,Public Speaking,3,F,Fall2023
+CHE101L,Chemistry I Lab,1,C-,Fall2023
+MAT350,Probability & Statistics,3,F,Fall2023
+PHY108L,Physics II Lab,1,C-,Spring2024
+CSE173,Discrete Mathematics,3,D+,Spring2024
+HIS102,World Civilization,3,I,Spring2024
+MAT130,Calculus II,3,F,Spring2024
+ENG105,Advanced Composition,3,C+,Spring2024
+EEE141L,Electrical Circuits I Lab,1,F,Summer2024
+CSE225L,Data Structures & Algorithms Lab,1,D,Summer2024
+CSE231,Digital Logic Design,3,F,Summer2024
+CSE499A,Senior Capstone Design I,2,B-,Summer2024
+ENG111,Public Speaking,3,C,Fall2024
+MAT130,Calculus II,3,D,Fall2024
+CSE145,Introduction to Artificial Intelligence,3,B,Fall2024
+ENG103,Intermediate Composition,3,F,Fall2024

@@ -1,0 +1,26 @@
+course_code,course_name,credits,grade,semester
+ECO101,Intro to Microeconomics,3,B,Fall2019
+BUS135,Business Mathematics,3,B+,Fall2019
+MIS107,Introduction to Computers,3,A-,Fall2019
+ENG103,Intermediate Composition,3,B,Fall2019
+BUS172,Introduction to Statistics,3,C+,Spring2020
+ACT201,Intro to Financial Accounting,3,B-,Spring2020
+MGT212,Principles of Management,3,C,Spring2020
+ENG105,Advanced Writing Skills,3,B+,Spring2020
+BUS173,Applied Statistics,3,D+,Summer2020
+FIN254,Intro to Financial Management,3,C,Summer2020
+MKT202,Introduction to Marketing,3,B-,Summer2020
+PHI401,Ethics / Philosophy,3,C+,Summer2020
+CSE115,Programming Language I,3,A,Fall2021
+CSE115L,Programming Language I Lab,1,A,Fall2021
+MAT120,Calculus I,3,A-,Fall2021
+PHY107,Physics I,3,B+,Fall2021
+PHY107L,Physics I Lab,1,A,Fall2021
+CSE173,Discrete Mathematics,3,A,Spring2022
+MAT125,Linear Algebra,3,B+,Spring2022
+CSE215,Programming Language II,3,A-,Summer2022
+CSE215L,Programming Language II Lab,1,A,Summer2022
+CSE225,Data Structures & Algorithms,3,B,Fall2022
+CSE225L,Data Structures & Algorithms Lab,1,B+,Fall2022
+CSE231,Digital Logic Design,3,A,Spring2023
+CSE231L,Digital Logic Design Lab,1,A,Spring2023

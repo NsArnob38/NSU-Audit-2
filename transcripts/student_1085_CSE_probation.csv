@@ -1,0 +1,26 @@
+course_code,course_name,credits,grade,semester
+CSE299,Junior Design Project,1,C-,Summer2023
+PHY108,Physics II,3,C-,Summer2023
+HIS101,Bangladesh History,3,D,Summer2023
+CSE311,Database Management Systems,3,I,Summer2023
+CSE101,Introduction to Python Programming,3,F,Summer2023
+CSE231,Digital Logic Design,3,C-,Summer2023
+CSE225L,Data Structures & Algorithms Lab,1,F,Summer2023
+POL101,Intro to Political Science,3,D+,Summer2023
+CSE499A,Senior Capstone Design I,2,D,Fall2023
+PHI104,Introduction to Ethics,3,D+,Fall2023
+CSE101,Introduction to Python Programming,3,C,Fall2023
+SOC101,Intro to Sociology,3,F,Fall2023
+CSE226,Fundamentals of Vibe Coding,3,F,Spring2024
+CHE101L,Chemistry I Lab,1,F,Spring2024
+CSE499B,Senior Capstone Design II,2,D+,Spring2024
+CSE311,Database Management Systems,3,D,Spring2024
+CSE225L,Data Structures & Algorithms Lab,1,D,Spring2024
+EEE111L,Analog Electronics I Lab,1,I,Spring2024
+CSE115L,Programming Language I Lab,1,D,Summer2024
+CEE110,Engineering Drawing,1,I,Summer2024
+ENG105,Advanced Composition,3,D+,Summer2024
+CSE331L,Microprocessor Interfacing Lab,1,D,Summer2024
+CHE101L,Chemistry I Lab,1,F,Summer2024
+CSE499A,Senior Capstone Design I,2,D+,Summer2024
+CEE110,Engineering Drawing,1,D,Fall2024

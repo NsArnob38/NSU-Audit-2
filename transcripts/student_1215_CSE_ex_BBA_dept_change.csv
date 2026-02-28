@@ -1,0 +1,34 @@
+course_code,course_name,credits,grade,semester
+MGT489,Strategic Management,3,C,Spring2020
+BUS135,Business Mathematics,3,B,Spring2020
+MIS207,Management Information Systems,3,C+,Spring2020
+ECO101,Intro to Microeconomics,3,D,Summer2020
+ACT202,Intro to Managerial Accounting,3,A,Summer2020
+FIN254,Intro to Financial Management,3,C,Summer2020
+BUS173,Applied Statistics,3,D+,Summer2020
+MGT368,Entrepreneurship,3,D,Fall2020
+LAW200,Legal Environment of Business,3,B,Fall2020
+MKT202,Introduction to Marketing,3,D,Fall2020
+CSE499A,Senior Capstone Design I,2,B,Spring2021
+CSE225,Data Structures & Algorithms,3,B+,Spring2021
+EEE141,Electrical Circuits I,3,C-,Spring2021
+CSE331L,Microprocessor Interfacing Lab,1,B+,Spring2021
+CSE173,Discrete Mathematics,3,A,Spring2021
+EEE111L,Analog Electronics I Lab,1,F,Spring2021
+CSE231L,Digital Logic Design Lab,1,C-,Summer2021
+CSE115,Programming Language I,3,C-,Summer2021
+CSE311,Database Management Systems,3,C,Summer2021
+PHI104,Introduction to Ethics,3,F,Fall2021
+CSE323,Operating Systems Design,3,A,Fall2021
+CSE231,Digital Logic Design,3,A-,Fall2021
+PHY107,Physics I,3,B+,Spring2022
+PHY107L,Physics I Lab,1,C-,Spring2022
+POL104,Political Science,3,C+,Spring2022
+CSE331,Microprocessor Interfacing,3,A,Summer2022
+PHY108,Physics II,3,C-,Summer2022
+CSE332,Computer Organization & Architecture,3,D,Summer2022
+CSE311L,Database Management Systems Lab,1,D,Summer2022
+CSE373,Design & Analysis of Algorithms,3,B,Summer2022
+CSE115L,Programming Language I Lab,1,B-,Summer2022
+CSE215L,Programming Language II Lab,1,C+,Fall2022
+HIS101,Bangladesh History,3,A,Fall2022

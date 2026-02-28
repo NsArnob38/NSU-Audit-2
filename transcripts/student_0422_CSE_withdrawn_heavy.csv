@@ -1,0 +1,30 @@
+course_code,course_name,credits,grade,semester
+CSE499A,Senior Capstone Design I,2,B,Fall2022
+BIO103,Biology I,3,C+,Fall2022
+CSE145,Introduction to Artificial Intelligence,3,W,Fall2022
+PHY108,Physics II,3,W,Fall2022
+CSE331L,Microprocessor Interfacing Lab,1,W,Fall2022
+GEO205,Geography,3,W,Fall2022
+CSE299,Junior Design Project,1,F,Spring2023
+CSE115L,Programming Language I Lab,1,B,Spring2023
+PHI104,Introduction to Ethics,3,W,Spring2023
+CSE115,Programming Language I,3,C+,Spring2023
+CSE231L,Digital Logic Design Lab,1,B,Spring2023
+EEE141,Electrical Circuits I,3,W,Spring2023
+PHY107,Physics I,3,W,Spring2023
+CSE173,Discrete Mathematics,3,C,Spring2023
+ECO101,Intro to Microeconomics,3,C+,Spring2023
+MAT130,Calculus II,3,W,Summer2023
+EEE452,Engineering Economics,3,A,Summer2023
+PHY107L,Physics I Lab,1,D,Summer2023
+CSE231,Digital Logic Design,3,W,Summer2023
+EEE111,Analog Electronics I,3,W,Summer2023
+CEE110,Engineering Drawing,1,W,Fall2023
+PHY108L,Physics II Lab,1,B,Fall2023
+CSE323,Operating Systems Design,3,W,Fall2023
+CSE425,Concepts of Programming Languages,3,W,Spring2024
+ENG111,Public Speaking,3,F,Spring2024
+CSE311,Database Management Systems,3,W,Spring2024
+CSE225L,Data Structures & Algorithms Lab,1,W,Spring2024
+CSE332,Computer Organization & Architecture,3,W,Spring2024
+CSE226,Fundamentals of Vibe Coding,3,W,Spring2024

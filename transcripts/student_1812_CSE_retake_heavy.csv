@@ -1,0 +1,18 @@
+course_code,course_name,credits,grade,semester
+CSE331L,Microprocessor Interfacing Lab,1,D+,Summer2019
+MAT130,Calculus II,3,C-,Fall2019
+CSE323,Operating Systems Design,3,F,Fall2019
+EEE111,Analog Electronics I,3,F,Spring2020
+CSE101,Introduction to Python Programming,3,D+,Spring2020
+CSE115,Programming Language I,3,C,Summer2020
+MAT361,Differential Equations,3,C,Fall2020
+CSE299,Junior Design Project,1,D+,Fall2020
+CSE225,Data Structures & Algorithms,3,C,Spring2021
+BIO103L,Biology I Lab,1,F,Spring2021
+CSE311L,Database Management Systems Lab,1,F,Spring2021
+CSE499A,Senior Capstone Design I,2,C-,Summer2021
+CSE215L,Programming Language II Lab,1,W,Fall2021
+BIO103,Biology I,3,C,Fall2021
+CSE499B,Senior Capstone Design II,2,D+,Spring2022
+BIO103L,Biology I Lab,1,C,Summer2023
+CSE311L,Database Management Systems Lab,1,D+,Summer2024

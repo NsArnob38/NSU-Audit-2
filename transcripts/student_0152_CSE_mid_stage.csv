@@ -1,0 +1,22 @@
+course_code,course_name,credits,grade,semester
+PHY108L,Physics II Lab,1,A-,Summer2021
+CSE327,Software Engineering,3,B-,Summer2021
+CSE173,Discrete Mathematics,3,B,Summer2021
+MAT250,Calculus III,3,A,Summer2021
+CSE499A,Senior Capstone Design I,2,B+,Fall2021
+PHI104,Introduction to Ethics,3,D+,Fall2021
+ENG103,Intermediate Composition,3,B-,Fall2021
+CSE231L,Digital Logic Design Lab,1,A,Fall2021
+CSE311,Database Management Systems,3,A,Fall2021
+EEE111L,Analog Electronics I Lab,1,W,Fall2021
+HIS101,Bangladesh History,3,D,Fall2021
+EEE141,Electrical Circuits I,3,B,Spring2022
+MAT361,Differential Equations,3,B,Spring2022
+ENG111,Public Speaking,3,C,Spring2022
+MAT350,Probability & Statistics,3,C-,Spring2022
+CSE226,Fundamentals of Vibe Coding,3,F,Spring2022
+CSE499B,Senior Capstone Design II,2,C+,Summer2022
+CSE225L,Data Structures & Algorithms Lab,1,D+,Summer2022
+PHY107,Physics I,3,C,Summer2022
+CEE110,Engineering Drawing,1,C-,Summer2022
+CHE101L,Chemistry I Lab,1,A,Summer2022

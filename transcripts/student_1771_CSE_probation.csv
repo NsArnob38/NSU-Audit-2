@@ -1,0 +1,35 @@
+course_code,course_name,credits,grade,semester
+MAT125,Linear Algebra,3,I,Summer2019
+CSE311,Database Management Systems,3,D+,Summer2019
+BIO103L,Biology I Lab,1,F,Summer2019
+ENG105,Advanced Composition,3,D+,Summer2019
+EEE141,Electrical Circuits I,3,D,Summer2019
+CSE115,Programming Language I,3,F,Summer2019
+POL101,Intro to Political Science,3,F,Summer2019
+CSE323,Operating Systems Design,3,F,Fall2019
+CSE215L,Programming Language II Lab,1,F,Fall2019
+EEE141L,Electrical Circuits I Lab,1,D+,Fall2019
+CSE101,Introduction to Python Programming,3,F,Fall2019
+MAT130,Calculus II,3,C-,Spring2020
+HIS101,Bangladesh History,3,D+,Spring2020
+CHE101L,Chemistry I Lab,1,F,Spring2020
+MAT361,Differential Equations,3,I,Spring2020
+EEE111L,Analog Electronics I Lab,1,C-,Spring2020
+CSE173,Discrete Mathematics,3,F,Spring2020
+PHY108L,Physics II Lab,1,F,Spring2020
+CHE101,Chemistry I,3,F,Spring2020
+EEE452,Engineering Economics,3,D+,Spring2020
+GEO205,Geography,3,C-,Spring2020
+MAT250,Calculus III,3,F,Summer2020
+MAT350,Probability & Statistics,3,D,Summer2020
+EEE111,Analog Electronics I,3,D,Summer2020
+PHY107L,Physics I Lab,1,D+,Summer2020
+CSE331L,Microprocessor Interfacing Lab,1,C-,Summer2020
+CSE499A,Senior Capstone Design I,2,F,Summer2020
+MAT250,Calculus III,3,C,Fall2021
+BIO103L,Biology I Lab,1,B,Fall2021
+CHE101,Chemistry I,3,C,Fall2021
+CSE115,Programming Language I,3,B,Spring2022
+MAT350,Probability & Statistics,3,D+,Spring2024
+CSE215L,Programming Language II Lab,1,F,Spring2024
+CSE499A,Senior Capstone Design I,2,C+,Summer2024

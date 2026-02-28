@@ -1,0 +1,34 @@
+course_code,course_name,credits,grade,semester
+CSE225,Data Structures & Algorithms,3,C-,Spring2022
+CHE101,Chemistry I,3,D,Spring2022
+CSE101,Introduction to Python Programming,3,D,Spring2022
+CSE226,Fundamentals of Vibe Coding,3,D,Spring2022
+HIS101,Bangladesh History,3,F,Spring2022
+ECO104,Intro to Macroeconomics,3,F,Spring2022
+PHY107L,Physics I Lab,1,D,Summer2022
+CSE299,Junior Design Project,1,D,Summer2022
+CSE311L,Database Management Systems Lab,1,C-,Summer2022
+PHI104,Introduction to Ethics,3,F,Summer2022
+CSE101,Introduction to Python Programming,3,B-,Summer2022
+CSE231,Digital Logic Design,3,I,Summer2022
+HIS102,World Civilization,3,F,Fall2022
+PHY108,Physics II,3,D,Spring2023
+CHE101,Chemistry I,3,D,Spring2023
+PHY107L,Physics I Lab,1,C,Spring2023
+CSE299,Junior Design Project,1,C,Spring2023
+MAT250,Calculus III,3,D,Summer2023
+CSE499A,Senior Capstone Design I,2,F,Summer2023
+MAT350,Probability & Statistics,3,F,Summer2023
+CSE373,Design & Analysis of Algorithms,3,I,Summer2023
+ENG105,Advanced Composition,3,D+,Fall2023
+CHE101L,Chemistry I Lab,1,F,Fall2023
+CSE115L,Programming Language I Lab,1,C-,Fall2023
+PHY107,Physics I,3,D,Spring2024
+CSE499A,Senior Capstone Design I,2,B-,Spring2024
+MAT350,Probability & Statistics,3,D+,Spring2024
+PHI104,Introduction to Ethics,3,F,Spring2024
+CSE231,Digital Logic Design,3,C+,Spring2024
+CSE226,Fundamentals of Vibe Coding,3,B,Summer2024
+HIS101,Bangladesh History,3,F,Summer2024
+CSE373,Design & Analysis of Algorithms,3,D,Summer2024
+HIS102,World Civilization,3,D+,Fall2024

@@ -1,0 +1,30 @@
+course_code,course_name,credits,grade,semester
+CSE299,Junior Design Project,1,T,Summer2023
+PHY107,Physics I,3,B+,Summer2023
+PHI104,Introduction to Ethics,3,C,Summer2023
+CSE101,Introduction to Python Programming,3,A-,Summer2023
+CSE323,Operating Systems Design,3,B+,Fall2023
+CSE215L,Programming Language II Lab,1,T,Fall2023
+MAT361,Differential Equations,3,C+,Fall2023
+CSE225,Data Structures & Algorithms,3,A,Fall2023
+CSE173,Discrete Mathematics,3,A-,Fall2023
+CHE101,Chemistry I,3,A-,Fall2023
+CSE225L,Data Structures & Algorithms Lab,1,B,Fall2023
+CSE425,Concepts of Programming Languages,3,A,Fall2023
+CSE373,Design & Analysis of Algorithms,3,B+,Spring2024
+CEE110,Engineering Drawing,1,T,Spring2024
+CSE145,Introduction to Artificial Intelligence,3,B+,Spring2024
+MAT250,Calculus III,3,T,Spring2024
+ENG105,Advanced Composition,3,T,Spring2024
+CSE332,Computer Organization & Architecture,3,T,Spring2024
+MAT130,Calculus II,3,A,Spring2024
+EEE452,Engineering Economics,3,T,Spring2024
+GEO205,Geography,3,C+,Spring2024
+CSE499A,Senior Capstone Design I,2,T,Summer2024
+MAT350,Probability & Statistics,3,B,Summer2024
+HIS102,World Civilization,3,C+,Summer2024
+CSE115,Programming Language I,3,A,Summer2024
+CSE311,Database Management Systems,3,B,Summer2024
+EEE111,Analog Electronics I,3,C+,Summer2024
+CSE231L,Digital Logic Design Lab,1,T,Summer2024
+EEE141L,Electrical Circuits I Lab,1,A-,Summer2024

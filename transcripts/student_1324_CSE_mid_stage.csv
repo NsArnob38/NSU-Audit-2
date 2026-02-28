@@ -1,0 +1,28 @@
+course_code,course_name,credits,grade,semester
+BIO103,Biology I,3,C,Summer2021
+CHE101L,Chemistry I Lab,1,F,Fall2021
+PHY108,Physics II,3,B+,Spring2022
+CSE331L,Microprocessor Interfacing Lab,1,D+,Spring2022
+MAT130,Calculus II,3,B+,Spring2022
+CSE499B,Senior Capstone Design II,2,B,Spring2022
+CSE215,Programming Language II,3,B+,Summer2022
+CSE327,Software Engineering,3,D+,Summer2022
+ENG105,Advanced Composition,3,A-,Summer2022
+PHY107,Physics I,3,A,Fall2022
+CSE145,Introduction to Artificial Intelligence,3,C+,Fall2022
+MAT120,Calculus I,3,A-,Fall2022
+EEE452,Engineering Economics,3,W,Fall2022
+CHE101,Chemistry I,3,D+,Spring2023
+CSE173,Discrete Mathematics,3,B+,Summer2023
+CSE311,Database Management Systems,3,B+,Summer2023
+CSE231,Digital Logic Design,3,D+,Summer2023
+CSE373,Design & Analysis of Algorithms,3,A,Summer2023
+CSE311L,Database Management Systems Lab,1,B,Spring2024
+CSE231L,Digital Logic Design Lab,1,B,Spring2024
+HIS101,Bangladesh History,3,A-,Spring2024
+SOC101,Intro to Sociology,3,B,Spring2024
+CSE226,Fundamentals of Vibe Coding,3,B+,Summer2024
+EEE111,Analog Electronics I,3,B-,Summer2024
+MAT250,Calculus III,3,C,Summer2024
+CSE215L,Programming Language II Lab,1,B+,Summer2024
+MAT125,Linear Algebra,3,W,Summer2024

@@ -1,0 +1,26 @@
+course_code,course_name,credits,grade,semester
+CSE215,Programming Language II,3,B-,Spring2021
+EEE111L,Analog Electronics I Lab,1,B+,Spring2021
+CSE323,Operating Systems Design,3,B,Summer2021
+CSE225L,Data Structures & Algorithms Lab,1,C,Summer2021
+CSE331L,Microprocessor Interfacing Lab,1,C-,Summer2021
+CSE331,Microprocessor Interfacing,3,B+,Summer2021
+CSE332,Computer Organization & Architecture,3,C,Fall2021
+EEE111,Analog Electronics I,3,C-,Fall2021
+MKT337,Promotional Management,3,C+,Spring2022
+BUS173,Applied Statistics,3,B,Spring2022
+PBH101,Public Health,3,D,Summer2022
+ECO101,Intro to Microeconomics,3,D+,Summer2022
+MKT344,Consumer Behaviour,3,C+,Summer2022
+MGT212,Principles of Management,3,A,Fall2022
+MKT202,Introduction to Marketing,3,B-,Spring2023
+PHI401,Ethics / Philosophy,3,B-,Spring2023
+HIS103,History of South Asia,3,B+,Spring2023
+PSY101L,Psychology Lab,1,D+,Spring2023
+INB372,International Business,3,C+,Summer2023
+BUS251,Business Communication,3,C-,Fall2023
+MKT412,Services Marketing,3,D,Spring2024
+LAW200,Legal Environment of Business,3,C,Summer2024
+BUS135,Business Mathematics,3,B-,Summer2024
+ACT201,Intro to Financial Accounting,3,B+,Summer2024
+ECO104,Intro to Macroeconomics,3,B-,Summer2024

@@ -1,0 +1,20 @@
+course_code,course_name,credits,grade,semester
+CEE110,Engineering Drawing,1,D,Spring2020
+CSE327,Software Engineering,3,F,Spring2020
+MAT120,Calculus I,3,D,Spring2020
+HIS101,Bangladesh History,3,D+,Spring2020
+MAT125,Linear Algebra,3,D+,Summer2020
+CSE323,Operating Systems Design,3,D+,Summer2020
+CSE499A,Senior Capstone Design I,2,C+,Fall2020
+CSE425,Concepts of Programming Languages,3,B-,Fall2020
+CSE145,Introduction to Artificial Intelligence,3,C+,Fall2020
+ENG111,Public Speaking,3,C-,Spring2021
+CHE101L,Chemistry I Lab,1,C,Summer2021
+PHI104,Introduction to Ethics,3,B-,Fall2021
+EEE141L,Electrical Circuits I Lab,1,C-,Fall2021
+CSE499B,Senior Capstone Design II,2,C+,Fall2021
+CSE311L,Database Management Systems Lab,1,F,Fall2021
+CSE331L,Microprocessor Interfacing Lab,1,D,Spring2022
+CSE215L,Programming Language II Lab,1,C+,Summer2022
+CSE327,Software Engineering,3,D,Fall2023
+CSE331L,Microprocessor Interfacing Lab,1,D+,Summer2024

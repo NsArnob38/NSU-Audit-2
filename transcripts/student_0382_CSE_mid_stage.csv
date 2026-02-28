@@ -1,0 +1,30 @@
+course_code,course_name,credits,grade,semester
+HIS102,World Civilization,3,C,Spring2019
+CSE327,Software Engineering,3,A,Spring2019
+PHI104,Introduction to Ethics,3,W,Spring2019
+EEE111,Analog Electronics I,3,C,Spring2019
+PHY107L,Physics I Lab,1,C,Spring2019
+CSE225L,Data Structures & Algorithms Lab,1,C-,Spring2019
+CSE373,Design & Analysis of Algorithms,3,C,Spring2019
+CSE101,Introduction to Python Programming,3,B,Spring2019
+GEO205,Geography,3,C+,Spring2019
+MAT250,Calculus III,3,B+,Summer2019
+CSE115L,Programming Language I Lab,1,C,Summer2019
+HIS101,Bangladesh History,3,B-,Summer2019
+CSE332,Computer Organization & Architecture,3,A,Summer2019
+EEE141,Electrical Circuits I,3,B,Summer2019
+PHY108,Physics II,3,C+,Summer2019
+PHY107,Physics I,3,C,Summer2019
+PHY108L,Physics II Lab,1,C-,Summer2019
+ENG103,Intermediate Composition,3,A,Fall2019
+CSE331,Microprocessor Interfacing,3,C,Fall2019
+BIO103,Biology I,3,C,Fall2019
+POL101,Intro to Political Science,3,C,Fall2019
+CSE331L,Microprocessor Interfacing Lab,1,W,Spring2020
+MAT361,Differential Equations,3,B,Spring2020
+MAT350,Probability & Statistics,3,F,Spring2020
+MAT125,Linear Algebra,3,D,Spring2020
+ENG111,Public Speaking,3,C-,Spring2020
+CHE101L,Chemistry I Lab,1,D+,Spring2020
+CSE231L,Digital Logic Design Lab,1,D+,Spring2020
+CSE299,Junior Design Project,1,A,Spring2020

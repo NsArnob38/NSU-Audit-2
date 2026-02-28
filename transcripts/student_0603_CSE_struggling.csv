@@ -1,0 +1,24 @@
+course_code,course_name,credits,grade,semester
+CHE101L,Chemistry I Lab,1,D+,Spring2021
+CSE373,Design & Analysis of Algorithms,3,D,Spring2021
+CSE331,Microprocessor Interfacing,3,C-,Spring2021
+CSE311,Database Management Systems,3,D,Spring2021
+CSE299,Junior Design Project,1,D,Spring2021
+CSE331L,Microprocessor Interfacing Lab,1,B-,Summer2021
+CSE499A,Senior Capstone Design I,2,C+,Summer2021
+CSE425,Concepts of Programming Languages,3,B-,Summer2021
+EEE111,Analog Electronics I,3,C,Fall2021
+CSE145,Introduction to Artificial Intelligence,3,C-,Fall2021
+ECO104,Intro to Macroeconomics,3,F,Fall2021
+POL101,Intro to Political Science,3,D+,Fall2021
+CSE101,Introduction to Python Programming,3,B,Spring2022
+BIO103L,Biology I Lab,1,C+,Spring2022
+CSE332,Computer Organization & Architecture,3,D,Summer2022
+PHI104,Introduction to Ethics,3,C+,Summer2022
+EEE452,Engineering Economics,3,B-,Summer2022
+CSE373,Design & Analysis of Algorithms,3,D,Summer2022
+CSE115,Programming Language I,3,D,Fall2022
+CSE173,Discrete Mathematics,3,C,Fall2022
+CHE101,Chemistry I,3,C-,Fall2022
+EEE111L,Analog Electronics I Lab,1,C-,Fall2022
+CSE115,Programming Language I,3,D,Fall2023

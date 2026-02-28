@@ -1,0 +1,28 @@
+course_code,course_name,credits,grade,semester
+CSE425,Concepts of Programming Languages,3,I,Summer2023
+CSE499A,Senior Capstone Design I,2,C-,Summer2023
+CSE323,Operating Systems Design,3,F,Summer2023
+PHY108,Physics II,3,I,Summer2023
+CHE101,Chemistry I,3,F,Summer2023
+CSE215L,Programming Language II Lab,1,D+,Summer2023
+CSE115L,Programming Language I Lab,1,D,Fall2023
+MAT350,Probability & Statistics,3,C-,Fall2023
+ECO104,Intro to Macroeconomics,3,D,Fall2023
+POL101,Intro to Political Science,3,F,Fall2023
+CSE311,Database Management Systems,3,D,Spring2024
+MAT250,Calculus III,3,D+,Spring2024
+CSE145,Introduction to Artificial Intelligence,3,I,Spring2024
+CSE425,Concepts of Programming Languages,3,D+,Summer2024
+CSE173,Discrete Mathematics,3,D,Summer2024
+EEE452,Engineering Economics,3,F,Summer2024
+CSE331L,Microprocessor Interfacing Lab,1,D,Summer2024
+CSE299,Junior Design Project,1,D+,Summer2024
+CSE145,Introduction to Artificial Intelligence,3,D,Summer2024
+CSE311,Database Management Systems,3,C,Fall2024
+CSE327,Software Engineering,3,D,Fall2024
+EEE452,Engineering Economics,3,F,Fall2024
+CSE323,Operating Systems Design,3,D,Fall2024
+CSE331L,Microprocessor Interfacing Lab,1,F,Fall2024
+CSE499B,Senior Capstone Design II,2,D,Fall2024
+EEE111,Analog Electronics I,3,F,Fall2024
+CSE373,Design & Analysis of Algorithms,3,D,Fall2024

@@ -1,0 +1,11 @@
+course_code,course_name,credits,grade,semester
+BIO103L,Biology I Lab,1,B-,Summer2021
+MAT130,Calculus II,3,D,Summer2021
+CSE231,Digital Logic Design,3,B-,Summer2021
+CSE327,Software Engineering,3,D+,Summer2022
+MAT125,Linear Algebra,3,B,Summer2022
+PHI104,Introduction to Ethics,3,C-,Summer2022
+CSE115,Programming Language I,3,C+,Fall2022
+EEE111,Analog Electronics I,3,F,Fall2023
+CSE425,Concepts of Programming Languages,3,A-,Fall2023
+EEE111L,Analog Electronics I Lab,1,A-,Fall2023

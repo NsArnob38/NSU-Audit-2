@@ -1,0 +1,20 @@
+course_code,course_name,credits,grade,semester
+BUS172,Introduction to Statistics,3,F,Summer2022
+MGT314,Production Management,3,D+,Summer2022
+PHY107,Physics I,3,I,Summer2022
+MGT368,Entrepreneurship,3,I,Fall2022
+MIS107,Introduction to Computers,3,D+,Fall2022
+BUS135,Business Mathematics,3,D,Fall2022
+ACT202,Intro to Managerial Accounting,3,D+,Spring2023
+MGT351,Human Resource Management,3,F,Spring2023
+ECO104,Intro to Macroeconomics,3,D,Spring2023
+FIN254,Intro to Financial Management,3,D,Spring2023
+ENV107,Environmental Science,3,D,Spring2023
+MIS210,Computer Programming,3,F,Spring2023
+MIS310,Systems Analysis,3,D,Spring2023
+MIS320,IT for Managers,3,D+,Spring2023
+MIS450,IS Security,3,D,Spring2023
+MGT351,Human Resource Management,3,B,Summer2023
+ECO104,Intro to Macroeconomics,3,C+,Spring2024
+BUS172,Introduction to Statistics,3,C,Summer2024
+FIN254,Intro to Financial Management,3,D+,Summer2024

@@ -1,0 +1,10 @@
+course_code,course_name,credits,grade,semester
+MAT361,Differential Equations,3,A,Summer2022
+EEE111L,Analog Electronics I Lab,1,D,Summer2022
+CSE332,Computer Organization & Architecture,3,A,Summer2023
+CSE215L,Programming Language II Lab,1,D,Summer2023
+CSE331L,Microprocessor Interfacing Lab,1,B-,Fall2023
+ENG105,Advanced Composition,3,W,Fall2023
+EEE111,Analog Electronics I,3,D+,Spring2024
+CSE101,Introduction to Python Programming,3,W,Spring2024
+CSE225L,Data Structures & Algorithms Lab,1,D,Spring2024

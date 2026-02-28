@@ -1,0 +1,22 @@
+course_code,course_name,credits,grade,semester
+CSE331L,Microprocessor Interfacing Lab,1,D+,Summer2020
+CSE215L,Programming Language II Lab,1,D,Summer2020
+ENG105,Advanced Composition,3,D,Fall2020
+EEE111,Analog Electronics I,3,F,Fall2020
+CSE311,Database Management Systems,3,C-,Spring2021
+CSE499B,Senior Capstone Design II,2,C-,Summer2021
+HIS102,World Civilization,3,F,Fall2021
+CSE299,Junior Design Project,1,F,Fall2021
+MAT130,Calculus II,3,D,Spring2022
+BIO103L,Biology I Lab,1,D+,Spring2022
+CSE231L,Digital Logic Design Lab,1,I,Summer2022
+CSE101,Introduction to Python Programming,3,D+,Fall2022
+CSE225L,Data Structures & Algorithms Lab,1,C-,Spring2023
+CSE311L,Database Management Systems Lab,1,F,Spring2023
+ENG111,Public Speaking,3,I,Summer2023
+CSE311L,Database Management Systems Lab,1,D,Summer2023
+MAT130,Calculus II,3,D+,Fall2023
+CSE231L,Digital Logic Design Lab,1,F,Spring2024
+HIS102,World Civilization,3,C,Summer2024
+CSE215L,Programming Language II Lab,1,C,Summer2024
+CSE299,Junior Design Project,1,C,Summer2024

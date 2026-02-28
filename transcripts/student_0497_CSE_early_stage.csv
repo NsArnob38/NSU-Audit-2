@@ -1,0 +1,11 @@
+course_code,course_name,credits,grade,semester
+CEE110,Engineering Drawing,1,C+,Summer2020
+CSE115L,Programming Language I Lab,1,B,Summer2020
+PHY107,Physics I,3,D+,Summer2020
+EEE111L,Analog Electronics I Lab,1,B-,Fall2020
+PHY108,Physics II,3,W,Fall2020
+CSE173,Discrete Mathematics,3,B,Summer2021
+CHE101,Chemistry I,3,A-,Fall2021
+BIO103L,Biology I Lab,1,B+,Fall2021
+CSE311,Database Management Systems,3,C+,Spring2022
+MAT125,Linear Algebra,3,B-,Spring2022

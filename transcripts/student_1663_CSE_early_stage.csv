@@ -1,0 +1,14 @@
+course_code,course_name,credits,grade,semester
+PHY108,Physics II,3,C+,Summer2021
+CSE226,Fundamentals of Vibe Coding,3,B,Summer2021
+CSE331L,Microprocessor Interfacing Lab,1,C+,Summer2021
+BIO103L,Biology I Lab,1,B,Summer2021
+CHE101,Chemistry I,3,D,Summer2021
+CSE332,Computer Organization & Architecture,3,D+,Summer2021
+EEE452,Engineering Economics,3,B,Fall2021
+CHE101L,Chemistry I Lab,1,D,Fall2021
+EEE111,Analog Electronics I,3,D+,Spring2022
+CSE231,Digital Logic Design,3,C,Spring2022
+POL101,Intro to Political Science,3,W,Spring2022
+CSE323,Operating Systems Design,3,B,Summer2022
+CSE215L,Programming Language II Lab,1,B+,Summer2022

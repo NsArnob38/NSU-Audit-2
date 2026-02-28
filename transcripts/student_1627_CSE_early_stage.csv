@@ -1,0 +1,13 @@
+course_code,course_name,credits,grade,semester
+MAT125,Linear Algebra,3,C-,Spring2020
+ENG103,Intermediate Composition,3,B-,Spring2020
+CSE115,Programming Language I,3,C-,Spring2020
+CSE499A,Senior Capstone Design I,2,D+,Summer2020
+CSE425,Concepts of Programming Languages,3,C,Spring2021
+EEE141L,Electrical Circuits I Lab,1,C+,Spring2021
+CSE231,Digital Logic Design,3,C,Summer2021
+CSE373,Design & Analysis of Algorithms,3,C,Summer2021
+CHE101,Chemistry I,3,A-,Summer2021
+CSE101,Introduction to Python Programming,3,A-,Summer2021
+CSE231L,Digital Logic Design Lab,1,A,Fall2021
+EEE111,Analog Electronics I,3,W,Fall2021

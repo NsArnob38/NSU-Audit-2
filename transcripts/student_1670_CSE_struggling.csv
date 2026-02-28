@@ -1,0 +1,41 @@
+course_code,course_name,credits,grade,semester
+CSE173,Discrete Mathematics,3,B,Spring2021
+CSE327,Software Engineering,3,F,Spring2021
+CSE226,Fundamentals of Vibe Coding,3,C,Spring2021
+MAT350,Probability & Statistics,3,C,Spring2021
+CSE115,Programming Language I,3,C,Spring2021
+CSE311,Database Management Systems,3,C+,Spring2021
+CSE499A,Senior Capstone Design I,2,C-,Spring2021
+ENG103,Intermediate Composition,3,D+,Spring2021
+CSE499B,Senior Capstone Design II,2,D+,Spring2021
+CHE101,Chemistry I,3,D+,Spring2021
+CSE145,Introduction to Artificial Intelligence,3,C,Spring2021
+CSE215L,Programming Language II Lab,1,D,Spring2021
+CSE327,Software Engineering,3,F,Summer2021
+EEE111L,Analog Electronics I Lab,1,F,Summer2021
+MAT130,Calculus II,3,C,Summer2021
+CEE110,Engineering Drawing,1,D,Summer2021
+EEE141,Electrical Circuits I,3,F,Summer2021
+CSE225,Data Structures & Algorithms,3,B-,Summer2021
+CSE115L,Programming Language I Lab,1,D,Summer2021
+CSE225L,Data Structures & Algorithms Lab,1,D,Summer2021
+CSE425,Concepts of Programming Languages,3,C,Summer2021
+CSE311L,Database Management Systems Lab,1,C-,Summer2021
+BIO103L,Biology I Lab,1,C+,Summer2021
+CSE331L,Microprocessor Interfacing Lab,1,C,Summer2021
+ENV203,Environmental Studies,3,C+,Summer2021
+MAT361,Differential Equations,3,C,Fall2021
+HIS101,Bangladesh History,3,C-,Fall2021
+MAT125,Linear Algebra,3,D,Fall2021
+HIS102,World Civilization,3,F,Fall2021
+CSE373,Design & Analysis of Algorithms,3,C-,Fall2021
+PHY107L,Physics I Lab,1,B-,Fall2021
+CSE299,Junior Design Project,1,D+,Fall2021
+ECO104,Intro to Macroeconomics,3,D,Fall2021
+POL104,Political Science,3,D+,Fall2021
+CEE110,Engineering Drawing,1,C+,Spring2022
+HIS102,World Civilization,3,B,Spring2022
+CSE115L,Programming Language I Lab,1,B-,Summer2022
+EEE111L,Analog Electronics I Lab,1,B,Spring2023
+CSE225L,Data Structures & Algorithms Lab,1,D,Summer2024
+CSE215L,Programming Language II Lab,1,C,Summer2024

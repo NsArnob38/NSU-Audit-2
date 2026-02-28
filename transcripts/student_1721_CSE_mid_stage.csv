@@ -1,0 +1,27 @@
+course_code,course_name,credits,grade,semester
+CSE299,Junior Design Project,1,D+,Spring2022
+CSE327,Software Engineering,3,D+,Spring2022
+HIS101,Bangladesh History,3,A,Spring2022
+CSE145,Introduction to Artificial Intelligence,3,B-,Spring2022
+EEE141,Electrical Circuits I,3,B,Spring2022
+ENG105,Advanced Composition,3,D+,Spring2022
+PHY107L,Physics I Lab,1,D,Summer2022
+CSE332,Computer Organization & Architecture,3,B+,Summer2022
+CSE226,Fundamentals of Vibe Coding,3,D+,Summer2022
+EEE111,Analog Electronics I,3,B,Summer2022
+EEE141L,Electrical Circuits I Lab,1,C-,Summer2022
+CSE225,Data Structures & Algorithms,3,C+,Summer2022
+POL101,Intro to Political Science,3,B,Summer2022
+CSE173,Discrete Mathematics,3,C,Fall2022
+CHE101,Chemistry I,3,D,Fall2022
+PHY108L,Physics II Lab,1,A,Spring2023
+CEE110,Engineering Drawing,1,A,Spring2023
+CSE425,Concepts of Programming Languages,3,C,Spring2023
+MAT130,Calculus II,3,B,Spring2023
+ENG103,Intermediate Composition,3,B,Spring2023
+CSE323,Operating Systems Design,3,B+,Spring2023
+ECO101,Intro to Microeconomics,3,B,Spring2023
+CSE231L,Digital Logic Design Lab,1,C,Summer2023
+BIO103,Biology I,3,F,Summer2023
+MAT125,Linear Algebra,3,C+,Summer2023
+CSE115,Programming Language I,3,C+,Summer2023

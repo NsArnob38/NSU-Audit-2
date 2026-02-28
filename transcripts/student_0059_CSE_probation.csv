@@ -1,0 +1,29 @@
+course_code,course_name,credits,grade,semester
+EEE111L,Analog Electronics I Lab,1,F,Fall2022
+CEE110,Engineering Drawing,1,I,Fall2022
+EEE141L,Electrical Circuits I Lab,1,D,Fall2022
+MAT250,Calculus III,3,C-,Fall2022
+CSE332,Computer Organization & Architecture,3,D,Spring2023
+EEE111L,Analog Electronics I Lab,1,F,Summer2023
+CSE173,Discrete Mathematics,3,F,Summer2023
+CHE101,Chemistry I,3,D,Fall2023
+ENG105,Advanced Composition,3,F,Fall2023
+CSE499B,Senior Capstone Design II,2,D,Fall2023
+EEE111,Analog Electronics I,3,D,Spring2024
+CEE110,Engineering Drawing,1,D,Spring2024
+CSE226,Fundamentals of Vibe Coding,3,F,Spring2024
+CSE332,Computer Organization & Architecture,3,D+,Spring2024
+ENG103,Intermediate Composition,3,C-,Spring2024
+ENG105,Advanced Composition,3,B-,Spring2024
+CSE499B,Senior Capstone Design II,2,B,Spring2024
+EEE141,Electrical Circuits I,3,C-,Spring2024
+ANT101,Anthropology,3,F,Spring2024
+EEE111,Analog Electronics I,3,D+,Summer2024
+PHY108,Physics II,3,D,Summer2024
+CHE101,Chemistry I,3,C+,Summer2024
+MAT130,Calculus II,3,I,Summer2024
+CSE225L,Data Structures & Algorithms Lab,1,C-,Summer2024
+EEE141L,Electrical Circuits I Lab,1,C+,Summer2024
+PHY108,Physics II,3,F,Fall2024
+MAT130,Calculus II,3,B,Fall2024
+CSE226,Fundamentals of Vibe Coding,3,C+,Fall2024
