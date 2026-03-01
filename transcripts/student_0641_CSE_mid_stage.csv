@@ -1,8 +1,9 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Spring2023
 BIO103,Biology I,3,B,Spring2023
 PHI104,Introduction to Ethics,3,C+,Spring2023
 CSE215L,Programming Language II Lab,1,D,Spring2023
-MAT350,Probability & Statistics,3,B,Spring2023
+MAT240,Probability & Statistics,3,B,Spring2023
 EEE111,Analog Electronics I,3,F,Spring2023
 EEE111L,Analog Electronics I Lab,1,A,Spring2023
 ENG105,Advanced Composition,3,B+,Spring2023

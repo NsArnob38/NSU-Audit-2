@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Fall2020
 CSE499B,Senior Capstone Design II,2,B-,Fall2020
 CSE226,Fundamentals of Vibe Coding,3,D+,Fall2020
 CSE215L,Programming Language II Lab,1,B+,Fall2020
@@ -46,7 +47,7 @@ CSE327,Software Engineering,3,B+,Spring2022
 PHY108,Physics II,3,A,Spring2022
 CSE331L,Microprocessor Interfacing Lab,1,A,Spring2022
 CSE299,Junior Design Project,1,B,Spring2022
-MAT350,Probability & Statistics,3,D+,Spring2022
+MAT240,Probability & Statistics,3,D+,Spring2022
 EEE141,Electrical Circuits I,3,W,Spring2022
 ECO101,Intro to Microeconomics,3,B,Spring2022
 SOC201,Social Theory,3,C+,Spring2022

@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Fall2023
 MAT120,Calculus I,3,B+,Fall2023
 ENG111,Public Speaking,3,A,Fall2023
 CSE115,Programming Language I,3,A,Fall2023
@@ -22,7 +23,7 @@ PHY107,Physics I,3,A-,Spring2024
 CSE499A,Senior Capstone Design I,2,B-,Spring2024
 PHY108L,Physics II Lab,1,B+,Spring2024
 CSE101,Introduction to Python Programming,3,B+,Spring2024
-MAT350,Probability & Statistics,3,B-,Spring2024
+MAT240,Probability & Statistics,3,B-,Spring2024
 HIS102,World Civilization,3,B+,Spring2024
 BIO103L,Biology I Lab,1,B+,Spring2024
 PHI104,Introduction to Ethics,3,A-,Spring2024

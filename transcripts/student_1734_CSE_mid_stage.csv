@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Summer2021
 PHI104,Introduction to Ethics,3,B-,Summer2021
 CSE225L,Data Structures & Algorithms Lab,1,A,Summer2021
 BIO103L,Biology I Lab,1,B+,Fall2021
@@ -12,7 +13,7 @@ PHY107L,Physics I Lab,1,B-,Summer2022
 CSE215L,Programming Language II Lab,1,B+,Summer2022
 CHE101L,Chemistry I Lab,1,C,Summer2022
 CSE226,Fundamentals of Vibe Coding,3,A,Summer2022
-MAT350,Probability & Statistics,3,C+,Spring2023
+MAT240,Probability & Statistics,3,C+,Spring2023
 CSE311L,Database Management Systems Lab,1,B,Summer2023
 EEE141,Electrical Circuits I,3,C,Summer2023
 EEE141L,Electrical Circuits I Lab,1,C,Summer2023

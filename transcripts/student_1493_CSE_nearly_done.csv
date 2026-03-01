@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Spring2019
 MAT120,Calculus I,3,C+,Spring2019
 EEE111,Analog Electronics I,3,D,Spring2019
 BIO103,Biology I,3,C,Spring2019
@@ -47,7 +48,7 @@ SOC201,Social Theory,3,B+,Fall2020
 CSE115,Programming Language I,3,D,Spring2021
 CSE373,Design & Analysis of Algorithms,3,B-,Spring2021
 CSE226,Fundamentals of Vibe Coding,3,F,Spring2021
-MAT350,Probability & Statistics,3,D,Spring2021
+MAT240,Probability & Statistics,3,D,Spring2021
 CSE173,Discrete Mathematics,3,B-,Spring2021
 CSE327,Software Engineering,3,D+,Spring2021
 POL101,Intro to Political Science,3,D,Spring2021

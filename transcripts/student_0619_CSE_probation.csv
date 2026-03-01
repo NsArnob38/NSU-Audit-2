@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Spring2021
 PHY108,Physics II,3,D,Spring2021
 PHY107L,Physics I Lab,1,D,Spring2021
 CSE327,Software Engineering,3,F,Spring2021
@@ -14,7 +15,7 @@ PHY107,Physics I,3,F,Summer2021
 PHY108L,Physics II Lab,1,I,Summer2021
 CHE101,Chemistry I,3,D,Fall2021
 PHY107,Physics I,3,C,Fall2021
-MAT350,Probability & Statistics,3,F,Spring2022
+MAT240,Probability & Statistics,3,F,Spring2022
 PHY108,Physics II,3,F,Spring2022
 MAT130,Calculus II,3,C-,Spring2022
 PHY107L,Physics I Lab,1,D+,Spring2022

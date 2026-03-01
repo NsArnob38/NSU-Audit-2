@@ -1,8 +1,9 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Spring2019
 ENG111,Public Speaking,3,C+,Spring2019
 CSE231L,Digital Logic Design Lab,1,B+,Spring2019
 BIO103L,Biology I Lab,1,C,Spring2019
-MAT350,Probability & Statistics,3,A,Spring2019
+MAT240,Probability & Statistics,3,A,Spring2019
 CSE332,Computer Organization & Architecture,3,B+,Spring2019
 ENV203,Environmental Studies,3,F,Spring2019
 CSE461,Robotics,3,C+,Spring2019

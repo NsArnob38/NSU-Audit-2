@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Spring2019
 PHY108,Physics II,3,B-,Spring2019
 PHY108L,Physics II Lab,1,B+,Spring2019
 CHE101L,Chemistry I Lab,1,B,Spring2019
@@ -7,7 +8,7 @@ CSE323,Operating Systems Design,3,B,Spring2019
 CSE332,Computer Organization & Architecture,3,B,Spring2019
 PHI201,Logic,3,B+,Spring2019
 MAT130,Calculus II,3,C,Summer2019
-MAT350,Probability & Statistics,3,A,Summer2019
+MAT240,Probability & Statistics,3,A,Summer2019
 CSE425,Concepts of Programming Languages,3,B,Summer2019
 MAT125,Linear Algebra,3,A-,Summer2019
 CSE101,Introduction to Python Programming,3,B+,Summer2019

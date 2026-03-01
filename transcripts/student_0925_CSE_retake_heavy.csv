@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Spring2022
 MAT250,Calculus III,3,D,Spring2022
 PHY107,Physics I,3,D,Spring2022
 MAT361,Differential Equations,3,W,Spring2022
@@ -12,7 +13,7 @@ CSE373,Design & Analysis of Algorithms,3,F,Spring2023
 EEE111,Analog Electronics I,3,F,Summer2023
 CHE101,Chemistry I,3,W,Summer2023
 CSE231,Digital Logic Design,3,D+,Summer2023
-MAT350,Probability & Statistics,3,D+,Summer2023
+MAT240,Probability & Statistics,3,D+,Summer2023
 CHE101L,Chemistry I Lab,1,D,Fall2023
 BIO103L,Biology I Lab,1,D,Fall2023
 MAT120,Calculus I,3,D+,Fall2023

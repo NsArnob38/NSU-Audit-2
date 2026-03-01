@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Summer2021
 PHY107,Physics I,3,D+,Summer2021
 CSE231L,Digital Logic Design Lab,1,F,Summer2021
 CSE145,Introduction to Artificial Intelligence,3,I,Summer2021
@@ -10,7 +11,7 @@ CSE323,Operating Systems Design,3,C-,Spring2022
 MAT120,Calculus I,3,D+,Summer2022
 CHE101,Chemistry I,3,D+,Summer2022
 CSE332,Computer Organization & Architecture,3,C+,Summer2022
-MAT350,Probability & Statistics,3,C-,Summer2022
+MAT240,Probability & Statistics,3,C-,Summer2022
 CSE231,Digital Logic Design,3,F,Fall2022
 CSE101,Introduction to Python Programming,3,F,Spring2023
 CSE299,Junior Design Project,1,D+,Summer2023

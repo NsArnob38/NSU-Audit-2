@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Spring2021
 CSE499A,Senior Capstone Design I,2,B,Spring2021
 CSE499B,Senior Capstone Design II,2,A,Spring2021
 CSE115,Programming Language I,3,B-,Spring2021
@@ -23,7 +24,7 @@ CEE110,Engineering Drawing,1,C,Summer2021
 PHY108L,Physics II Lab,1,A,Summer2021
 CSE173,Discrete Mathematics,3,A-,Summer2021
 BIO103,Biology I,3,B,Summer2021
-MAT350,Probability & Statistics,3,B,Summer2021
+MAT240,Probability & Statistics,3,B,Summer2021
 EEE141,Electrical Circuits I,3,B-,Summer2021
 SOC101,Intro to Sociology,3,C+,Summer2021
 PHI201,Logic,3,C,Summer2021

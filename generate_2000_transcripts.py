@@ -50,16 +50,18 @@ CSE_CAPSTONE = {
     "EEE452": ("Engineering Economics", 3),
 }
 
-# SEPS Core (38 credits)
+# SEPS Core (41 credits)
 CSE_SEPS_CORE = {
     "CSE115": ("Programming Language I", 3),
     "CSE115L": ("Programming Language I Lab", 1),
+    "MAT116": ("Pre-Calculus", 3),
     "MAT120": ("Calculus I", 3),
     "MAT125": ("Linear Algebra", 3),
     "MAT130": ("Calculus II", 3),
     "MAT250": ("Calculus III", 3),
-    "MAT350": ("Probability & Statistics", 3),
-    "MAT361": ("Differential Equations", 3),
+    "MAT240": ("Probability & Statistics", 3),
+    "MAT350": ("Complex Variables", 3),
+    "MAT361": ("Discrete Mathematics II", 3),
     "PHY107": ("Physics I", 3),
     "PHY107L": ("Physics I Lab", 1),
     "PHY108": ("Physics II", 3),
@@ -233,7 +235,7 @@ for conc_data in BBA_CONC_COURSES.values():
     ALL_COURSES.update(conc_data["required"])
     ALL_COURSES.update(conc_data["elective"])
 ALL_COURSES["ENG102"] = ("Introduction to Composition", 3)
-ALL_COURSES["MAT116"] = ("Pre-Calculus", 0)
+ALL_COURSES["MAT112"] = ("College Algebra", 0)
 ALL_COURSES["BUS112"] = ("Intro to Business Mathematics", 3)
 
 # SEMESTERS imported from engine.credit_engine

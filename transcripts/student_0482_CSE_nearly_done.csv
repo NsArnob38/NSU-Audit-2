@@ -1,6 +1,7 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Summer2023
 MAT250,Calculus III,3,B+,Summer2023
-MAT350,Probability & Statistics,3,A,Summer2023
+MAT240,Probability & Statistics,3,A,Summer2023
 MAT125,Linear Algebra,3,B+,Summer2023
 CSE231L,Digital Logic Design Lab,1,A,Summer2023
 CSE231,Digital Logic Design,3,B-,Summer2023

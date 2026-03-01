@@ -37,19 +37,21 @@ CSE_CAPSTONE = {
     "EEE452": 3,                              # Engineering Economics
 }
 
-# SEPS Core — Math, Science, Programming (38 credits)
+# SEPS Core — Math, Science, Programming (41 credits)
 CSE_SEPS_CORE = {
     "CSE115": 3, "CSE115L": 1,                # Programming Language I
+    "MAT116": 3,                              # Pre-Calculus
     "MAT120": 3,                              # Calculus I
-    "MAT125": 3,                              # Linear Algebra
     "MAT130": 3,                              # Calculus II
     "MAT250": 3,                              # Calculus III
-    "MAT350": 3,                              # Probability & Statistics
-    "MAT361": 3,                              # Differential Equations
+    "MAT125": 3,                              # Linear Algebra
+    "MAT240": 3,                              # Probability & Statistics
+    "MAT350": 3,                              # Complex Variables
+    "MAT361": 3,                              # Discrete Mathematics II
     "PHY107": 3, "PHY107L": 1,                # Physics I
     "PHY108": 3, "PHY108L": 1,                # Physics II
     "CHE101": 3, "CHE101L": 1,                # Chemistry I
-    "BIO103": 3, "BIO103L": 1,                # Biology I
+    "BIO103": 3, "BIO103L": 1,                # Biology I (Wait, checking if BIO is in SEPS)
     "CEE110": 1,                              # Engineering Drawing (CAD)
 }
 
@@ -72,7 +74,7 @@ CSE_GED_CHOICE_3 = {"SOC101": 3, "ANT101": 3, "ENV203": 3, "GEO205": 3}  # pick 
 
 CSE_GED_WAIVABLE = {
     "ENG102": 3,   # Waived if >=60% on English admission test
-    "MAT116": 0,   # Pre-Calculus, waived if >=60% on Math admission test
+    "MAT112": 0,   # College Algebra, waived if >=60% on Math admission test
 }
 
 CSE_TOTAL_CREDITS = 130

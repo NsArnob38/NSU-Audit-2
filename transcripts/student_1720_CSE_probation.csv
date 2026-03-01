@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Spring2020
 CSE331L,Microprocessor Interfacing Lab,1,D+,Spring2020
 CSE311L,Database Management Systems Lab,1,D+,Spring2020
 PHY107,Physics I,3,D+,Summer2020
@@ -14,7 +15,7 @@ HIS101,Bangladesh History,3,D,Fall2021
 BIO103L,Biology I Lab,1,F,Fall2021
 ENG103,Intermediate Composition,3,D,Spring2022
 EEE141,Electrical Circuits I,3,C-,Spring2022
-MAT350,Probability & Statistics,3,F,Spring2022
+MAT240,Probability & Statistics,3,F,Spring2022
 BIO103,Biology I,3,C-,Spring2022
 CSE215L,Programming Language II Lab,1,B,Summer2022
 EEE111L,Analog Electronics I Lab,1,D+,Summer2022
@@ -30,7 +31,7 @@ ENG111,Public Speaking,3,D,Fall2022
 CSE323,Operating Systems Design,3,F,Fall2022
 CSE299,Junior Design Project,1,F,Spring2023
 MAT250,Calculus III,3,I,Spring2023
-MAT350,Probability & Statistics,3,B-,Fall2023
+MAT240,Probability & Statistics,3,B-,Fall2023
 CSE231,Digital Logic Design,3,C,Fall2023
 CSE299,Junior Design Project,1,B-,Spring2024
 CSE323,Operating Systems Design,3,B,Spring2024

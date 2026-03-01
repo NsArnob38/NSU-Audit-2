@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Fall2019
 EEE141L,Electrical Circuits I Lab,1,C+,Fall2019
 CSE231,Digital Logic Design,3,A-,Fall2019
 PHY108L,Physics II Lab,1,C,Fall2019
@@ -19,7 +20,7 @@ CSE311,Database Management Systems,3,B+,Spring2020
 CSE173,Discrete Mathematics,3,B+,Spring2020
 POL101,Intro to Political Science,3,W,Spring2020
 ANT101,Anthropology,3,B,Spring2020
-MAT350,Probability & Statistics,3,C-,Summer2020
+MAT240,Probability & Statistics,3,C-,Summer2020
 MAT250,Calculus III,3,C,Summer2020
 CSE215,Programming Language II,3,C+,Summer2020
 CSE323,Operating Systems Design,3,F,Summer2020

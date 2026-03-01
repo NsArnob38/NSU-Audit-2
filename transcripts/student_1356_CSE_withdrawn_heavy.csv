@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Summer2022
 CSE225L,Data Structures & Algorithms Lab,1,W,Summer2022
 CSE215L,Programming Language II Lab,1,A,Summer2022
 HIS101,Bangladesh History,3,F,Summer2022
@@ -14,7 +15,7 @@ ENG105,Advanced Composition,3,B,Fall2022
 ENG111,Public Speaking,3,W,Fall2022
 CHE101,Chemistry I,3,D,Fall2022
 POL104,Political Science,3,W,Fall2022
-MAT350,Probability & Statistics,3,B+,Spring2023
+MAT240,Probability & Statistics,3,B+,Spring2023
 EEE141L,Electrical Circuits I Lab,1,W,Spring2023
 CSE327,Software Engineering,3,C,Spring2023
 CSE331,Microprocessor Interfacing,3,C,Spring2023

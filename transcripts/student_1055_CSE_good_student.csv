@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Summer2021
 CSE499A,Senior Capstone Design I,2,B+,Summer2021
 CSE311L,Database Management Systems Lab,1,A,Summer2021
 CSE225L,Data Structures & Algorithms Lab,1,B,Summer2021
@@ -29,7 +30,7 @@ BIO103,Biology I,3,B-,Summer2022
 CSE332,Computer Organization & Architecture,3,B-,Summer2022
 CSE231,Digital Logic Design,3,C+,Summer2022
 PHY107,Physics I,3,B+,Summer2022
-MAT350,Probability & Statistics,3,C+,Summer2022
+MAT240,Probability & Statistics,3,C+,Summer2022
 HIS101,Bangladesh History,3,A-,Fall2022
 MAT361,Differential Equations,3,A,Fall2022
 CHE101,Chemistry I,3,A-,Fall2022

@@ -1,8 +1,9 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Spring2023
 PHY107,Physics I,3,D,Spring2023
 CSE231L,Digital Logic Design Lab,1,W,Summer2023
 EEE111L,Analog Electronics I Lab,1,C-,Fall2023
 CSE231,Digital Logic Design,3,D+,Spring2024
 CEE110,Engineering Drawing,1,D,Spring2024
 ENG102,Introduction to Composition,3,T,waiver
-MAT116,Pre-Calculus,0,T,waiver
+MAT112,College Algebra,0,T,waiver

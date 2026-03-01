@@ -110,7 +110,7 @@ def grade_color(grade):
 # ─── Report Generators ───────────────────────────────────
 
 def print_normal_report(filepath, program, records, credits_attempted, credits_earned, cgpa_data, audit_result):
-    """Print the summary audit report."""
+    """Print the brief report: Summary header (Credits & CGPA)."""
     total_req = audit_result["total_credits_required"]
     cgpa = cgpa_data["cgpa"]
     standing = cgpa_data["standing"]
@@ -121,56 +121,23 @@ def print_normal_report(filepath, program, records, credits_attempted, credits_e
     print(f"  Student Transcript : {os.path.basename(filepath)}")
     print(f"  Credits Attempted  : {credits_attempted}")
 
-    # Credits earned with color
     earned_str = f"{credits_earned} / {total_req}"
-    if credits_earned >= total_req:
-        print(f"  Credits Earned     : {color(earned_str, GREEN)}")
-    else:
-        print(f"  Credits Earned     : {color(earned_str, RED)}")
-
-    # CGPA
+    print(f"  Credits Earned     : {color(earned_str, GREEN if credits_earned >= total_req else RED)}")
+    
     cgpa_str = f"{cgpa:.2f} / 4.00"
-    if cgpa >= 2.0:
-        print(f"  CGPA               : {color(cgpa_str, GREEN)}")
-    else:
-        print(f"  CGPA               : {color(cgpa_str, RED)}")
+    print(f"  CGPA               : {color(cgpa_str, GREEN if cgpa >= 2.0 else RED)}")
 
-    # Program-specific CGPA checks
     if program.upper() == "CSE":
         core_cgpa = audit_result.get("major_core_cgpa", 0.0)
-        elective_cgpa = audit_result.get("major_elective_cgpa", 0.0)
         core_str = f"{core_cgpa:.2f} / 4.00"
-        elec_str = f"{elective_cgpa:.2f} / 4.00"
-        if core_cgpa >= 2.0:
-            print(f"  Major Core CGPA    : {color(core_str, GREEN)}")
-        else:
-            print(f"  Major Core CGPA    : {color(core_str, RED)}")
-        if elective_cgpa >= 2.0:
-            print(f"  Major Elective CGPA: {color(elec_str, GREEN)}")
-        else:
-            print(f"  Major Elective CGPA: {color(elec_str, RED)}")
-    else:  # BBA
+        print(f"  Major Core CGPA    : {color(core_str, GREEN if core_cgpa >= 2.0 else RED)}")
+    else:
         core_cgpa = audit_result.get("core_cgpa", 0.0)
-        conc_cgpa = audit_result.get("concentration_cgpa", 0.0)
-        conc_label = audit_result.get("concentration_label", "Undeclared")
-        if conc_label == "Undeclared":
-            conc_label = color("[UNDECLARED]", YELLOW)
-        core_str = f"{core_cgpa:.2f} / 4.00"
-        conc_str = f"{conc_cgpa:.2f} / 4.00"
-        if core_cgpa >= 2.0:
-            print(f"  School & Core CGPA : {color(core_str, GREEN)}")
-        else:
-            print(f"  School & Core CGPA : {color(core_str, RED)}")
-        if conc_cgpa >= 2.5:
-            print(f"  {conc_label} CGPA : {color(conc_str, GREEN)}")
-        else:
-            print(f"  {conc_label} CGPA : {color(conc_str, RED)}")
+        print(f"  School & Core CGPA : {color(f'{core_cgpa:.2f}', GREEN if core_cgpa >= 2.0 else RED)}")
 
-    # Standing
     if "PROBATION" in standing or "DISMISSAL" in standing:
         print(f"  Academic Standing  : {color(standing, RED)}")
 
-    # Eligibility
     if eligible:
         print(f"  Graduation Eligible: {color('YES', GREEN)}")
     else:
@@ -180,35 +147,20 @@ def print_normal_report(filepath, program, records, credits_attempted, credits_e
 
     print("=" * 50)
 
-    # Path to Graduation (always shown)
-    roadmap = audit_result.get("roadmap")
-    if roadmap and not roadmap["eligible"]:
-        print_graduation_roadmap(roadmap)
-
-
 def print_full_report(filepath, program, records, credits_attempted, credits_earned, cgpa_data, audit_result):
-    """Print the full report: summary + course history + remaining courses."""
-    # Print summary first
+    """Print the full report: Summary + Result Sheet + Roadmap + Missing Courses."""
+    # 1. Start with Normal (Summary)
     print_normal_report(filepath, program, records, credits_attempted, credits_earned, cgpa_data, audit_result)
-
-    # Course history table
-    print(section_bar("COURSE HISTORY"))
+    
+    # 2. Course Result Sheet
+    print(section_bar("COURSE RESULT SHEET"))
     headers = ["Code", "Course Name", "Cr", "Grade", "Semester", "Status"]
     rows = []
-    for r in records:
-        rows.append([
-            r.course_code,
-            r.course_name[:30],
-            str(r.credits),
-            grade_color(r.grade),
-            r.semester,
-            status_color(r.status),
-        ])
-
-    # Calculate widths (using raw text for alignment)
     raw_rows = []
     for r in records:
+        rows.append([r.course_code, r.course_name[:30], str(r.credits), grade_color(r.grade), r.semester, status_color(r.status)])
         raw_rows.append([r.course_code, r.course_name[:30], str(r.credits), r.grade, r.semester, r.status])
+    
     col_widths = []
     for i, h in enumerate(headers):
         max_w = len(h)
@@ -216,15 +168,13 @@ def print_full_report(filepath, program, records, credits_attempted, credits_ear
             max_w = max(max_w, len(str(row[i])))
         col_widths.append(max_w + 2)
 
-    # Print with colors
     sep = "+" + "+".join("-" * w for w in col_widths) + "+"
     def fmt_row(vals, raw_vals=None):
         cells = []
         for i, v in enumerate(vals):
             w = col_widths[i] if i < len(col_widths) else 12
             raw_len = len(str(raw_vals[i])) if raw_vals else len(str(v))
-            padding = w - 1 - raw_len
-            cells.append(f" {v}{' ' * max(0, padding)}")
+            cells.append(f" {v}{' ' * max(0, w - 1 - raw_len)}")
         return "|" + "|".join(cells) + "|"
 
     print(sep)
@@ -235,18 +185,19 @@ def print_full_report(filepath, program, records, credits_attempted, credits_ear
     print(sep)
     print(f"  Total: {len(records)} course attempt(s)")
 
-    # Remaining courses
+    # 3. Path to Graduation (Roadmap)
+    roadmap = audit_result.get("roadmap")
+    if roadmap and not roadmap["eligible"]:
+        print_graduation_roadmap(roadmap)
+    
+    # 4. Detailed Missing Courses
     remaining = audit_result.get("remaining", {})
     if remaining:
-        print(section_bar("COURSES REMAINING"))
+        print(section_bar("DETAILED MISSING COURSES"))
         for category, courses in remaining.items():
             print(f"\n  {color(f'[{category}]', YELLOW)}")
             for code, cr in courses.items():
                 print(f"    {color('o', RED)} {code} ({cr} credits)")
-    else:
-        print(section_bar("COURSES REMAINING"))
-        print(f"  {color('All required courses satisfied!', GREEN)}")
-
     print("\n" + "=" * 50)
 
 

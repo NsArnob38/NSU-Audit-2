@@ -1,9 +1,10 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Spring2019
 CSE327,Software Engineering,3,A,Spring2019
 PHY107,Physics I,3,A,Spring2019
 BIO103,Biology I,3,B+,Spring2019
 CSE173,Discrete Mathematics,3,D,Spring2019
 CSE499A,Senior Capstone Design I,2,B+,Summer2019
 CSE225L,Data Structures & Algorithms Lab,1,B,Summer2019
-MAT350,Probability & Statistics,3,C+,Fall2019
+MAT240,Probability & Statistics,3,C+,Fall2019
 MAT120,Calculus I,3,D+,Fall2019

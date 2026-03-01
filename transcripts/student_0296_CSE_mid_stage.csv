@@ -1,6 +1,7 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Fall2021
 CSE215L,Programming Language II Lab,1,B+,Fall2021
-MAT350,Probability & Statistics,3,C-,Spring2022
+MAT240,Probability & Statistics,3,C-,Spring2022
 ENG111,Public Speaking,3,D,Spring2022
 HIS101,Bangladesh History,3,D,Spring2022
 CSE231,Digital Logic Design,3,F,Spring2022

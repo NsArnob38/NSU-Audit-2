@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Fall2022
 CSE311L,Database Management Systems Lab,1,F,Fall2022
 CSE299,Junior Design Project,1,C,Fall2022
 CSE499A,Senior Capstone Design I,2,D,Fall2022
@@ -37,7 +38,7 @@ CSE331,Microprocessor Interfacing,3,B,Fall2023
 CSE225L,Data Structures & Algorithms Lab,1,A-,Fall2023
 CSE499B,Senior Capstone Design II,2,B,Fall2023
 CHE101,Chemistry I,3,B-,Fall2023
-MAT350,Probability & Statistics,3,D+,Fall2023
+MAT240,Probability & Statistics,3,D+,Fall2023
 CSE327,Software Engineering,3,A-,Fall2023
 CSE323,Operating Systems Design,3,B,Fall2023
 PHI104,Introduction to Ethics,3,W,Fall2023

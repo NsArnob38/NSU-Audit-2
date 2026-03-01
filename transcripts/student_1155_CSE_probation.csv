@@ -1,5 +1,6 @@
 course_code,course_name,credits,grade,semester
-MAT350,Probability & Statistics,3,F,Fall2019
+MAT116,Pre-Calculus,3,A-,Fall2019
+MAT240,Probability & Statistics,3,F,Fall2019
 PHI104,Introduction to Ethics,3,D+,Fall2019
 MAT125,Linear Algebra,3,D,Fall2019
 CSE115,Programming Language I,3,F,Fall2019
@@ -14,7 +15,7 @@ CSE323,Operating Systems Design,3,I,Spring2020
 CHE101L,Chemistry I Lab,1,D,Spring2020
 ENG111,Public Speaking,3,D,Spring2020
 HIS101,Bangladesh History,3,F,Spring2020
-MAT350,Probability & Statistics,3,B,Spring2021
+MAT240,Probability & Statistics,3,B,Spring2021
 MAT125,Linear Algebra,3,C,Summer2022
 ENG103,Intermediate Composition,3,C+,Summer2022
 CHE101L,Chemistry I Lab,1,B-,Spring2023

@@ -1,7 +1,8 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Summer2023
 CSE231,Digital Logic Design,3,B,Summer2023
 PHY108,Physics II,3,F,Summer2023
-MAT350,Probability & Statistics,3,W,Summer2023
+MAT240,Probability & Statistics,3,W,Summer2023
 EEE111,Analog Electronics I,3,W,Summer2023
 HIS102,World Civilization,3,W,Fall2023
 PHY107L,Physics I Lab,1,A,Fall2023

@@ -1,9 +1,10 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Summer2020
 CSE231,Digital Logic Design,3,A,Summer2020
 BIO103,Biology I,3,B,Summer2020
 CSE231L,Digital Logic Design Lab,1,A,Summer2020
 CSE115L,Programming Language I Lab,1,B+,Summer2020
-MAT350,Probability & Statistics,3,A-,Summer2020
+MAT240,Probability & Statistics,3,A-,Summer2020
 CSE323,Operating Systems Design,3,B+,Summer2020
 EEE141,Electrical Circuits I,3,A,Summer2020
 CSE425,Concepts of Programming Languages,3,A-,Summer2020

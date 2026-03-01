@@ -1,7 +1,8 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Spring2019
 BIO103,Biology I,3,C+,Spring2019
 EEE452,Engineering Economics,3,B-,Spring2019
-MAT350,Probability & Statistics,3,A-,Spring2019
+MAT240,Probability & Statistics,3,A-,Spring2019
 EEE111L,Analog Electronics I Lab,1,B-,Spring2019
 CSE445,Computer Vision,3,A-,Spring2019
 CSE461,Robotics,3,A,Spring2019

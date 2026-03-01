@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Summer2023
 CSE499B,Senior Capstone Design II,2,I,Summer2023
 ENG105,Advanced Composition,3,D,Summer2023
 CSE331,Microprocessor Interfacing,3,F,Summer2023
@@ -14,7 +15,7 @@ CHE101,Chemistry I,3,I,Fall2023
 HIS101,Bangladesh History,3,D+,Spring2024
 PHI104,Introduction to Ethics,3,I,Spring2024
 EEE141L,Electrical Circuits I Lab,1,D+,Spring2024
-MAT350,Probability & Statistics,3,C-,Spring2024
+MAT240,Probability & Statistics,3,C-,Spring2024
 MAT361,Differential Equations,3,D+,Spring2024
 HIS102,World Civilization,3,F,Spring2024
 ECO101,Intro to Microeconomics,3,D,Spring2024

@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Fall2022
 CSE331,Microprocessor Interfacing,3,A,Fall2022
 BIO103L,Biology I Lab,1,B+,Fall2022
 CSE225L,Data Structures & Algorithms Lab,1,B+,Fall2022
@@ -22,7 +23,7 @@ EEE111L,Analog Electronics I Lab,1,B,Summer2023
 ENG111,Public Speaking,3,A,Summer2023
 CHE101L,Chemistry I Lab,1,A-,Summer2023
 MAT250,Calculus III,3,B,Summer2023
-MAT350,Probability & Statistics,3,A,Summer2023
+MAT240,Probability & Statistics,3,A,Summer2023
 ENG105,Advanced Composition,3,B,Summer2023
 CSE101,Introduction to Python Programming,3,A-,Summer2023
 EEE452,Engineering Economics,3,A-,Fall2023

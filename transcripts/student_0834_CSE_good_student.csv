@@ -1,9 +1,10 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Spring2021
 MAT361,Differential Equations,3,B-,Spring2021
 CSE331,Microprocessor Interfacing,3,A-,Spring2021
 ENG111,Public Speaking,3,A-,Spring2021
 BIO103L,Biology I Lab,1,A-,Spring2021
-MAT350,Probability & Statistics,3,B,Spring2021
+MAT240,Probability & Statistics,3,B,Spring2021
 PHY108L,Physics II Lab,1,B,Spring2021
 HIS102,World Civilization,3,A-,Spring2021
 ENV203,Environmental Studies,3,C,Spring2021

@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Spring2019
 CSE499A,Senior Capstone Design I,2,B-,Spring2019
 CHE101L,Chemistry I Lab,1,W,Spring2019
 CSE323,Operating Systems Design,3,C+,Spring2019
@@ -29,7 +30,7 @@ HIS201,Modern History,3,C+,Summer2019
 MAT120,Calculus I,3,A,Fall2019
 CSE101,Introduction to Python Programming,3,B,Fall2019
 CSE173,Discrete Mathematics,3,B,Fall2019
-MAT350,Probability & Statistics,3,A-,Fall2019
+MAT240,Probability & Statistics,3,A-,Fall2019
 CSE373,Design & Analysis of Algorithms,3,B-,Fall2019
 CSE332,Computer Organization & Architecture,3,D,Fall2019
 PHY108,Physics II,3,B,Fall2019

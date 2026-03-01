@@ -175,7 +175,7 @@ def print_level2_report(filepath, program, records, credits_attempted, credits_e
 
 WAIVER_COURSE_INFO = {
     "ENG102": ("Introduction to Composition", 3),
-    "MAT116": ("Pre-Calculus", 0),
+    "MAT112": ("College Algebra", 0),
     "BUS112": ("Intro to Business Mathematics", 3),
 }
 
@@ -190,7 +190,7 @@ def ask_waivers(program, records):
     existing_codes = {r.course_code for r in records}
 
     if program == "CSE":
-        waiver_codes = ["ENG102", "MAT116"]
+        waiver_codes = ["ENG102", "MAT112"]
     else:  # BBA
         waiver_codes = ["ENG102", "BUS112"]
 

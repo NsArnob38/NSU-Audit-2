@@ -1,11 +1,12 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Fall2020
 EEE141L,Electrical Circuits I Lab,1,B,Fall2020
 POL104,Political Science,3,B+,Fall2020
 CSE311L,Database Management Systems Lab,1,A,Spring2021
 CSE311,Database Management Systems,3,B,Spring2021
 PHY107L,Physics I Lab,1,B,Spring2021
 PHI104,Introduction to Ethics,3,B-,Spring2021
-MAT350,Probability & Statistics,3,B-,Spring2021
+MAT240,Probability & Statistics,3,B-,Spring2021
 CSE471,Compiler Design,3,B+,Spring2021
 CSE173,Discrete Mathematics,3,B+,Summer2021
 EEE141,Electrical Circuits I,3,B+,Summer2021

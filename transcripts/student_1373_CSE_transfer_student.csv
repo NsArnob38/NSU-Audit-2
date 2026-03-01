@@ -1,11 +1,12 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Spring2021
 CEE110,Engineering Drawing,1,C+,Spring2021
 MAT250,Calculus III,3,T,Spring2021
 MAT120,Calculus I,3,C+,Spring2021
 EEE141L,Electrical Circuits I Lab,1,C+,Spring2021
 MAT130,Calculus II,3,A,Spring2021
 CSE323,Operating Systems Design,3,B+,Spring2021
-MAT350,Probability & Statistics,3,C+,Spring2021
+MAT240,Probability & Statistics,3,C+,Spring2021
 PHY107L,Physics I Lab,1,B,Spring2021
 ENG111,Public Speaking,3,C,Spring2021
 MAT361,Differential Equations,3,C+,Spring2021

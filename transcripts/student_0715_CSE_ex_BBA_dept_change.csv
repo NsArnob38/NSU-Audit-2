@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Fall2019
 ECO104,Intro to Macroeconomics,3,D,Fall2019
 BUS251,Business Communication,3,F,Fall2019
 LAW200,Legal Environment of Business,3,B-,Fall2019
@@ -24,7 +25,7 @@ MAT130,Calculus II,3,B+,Summer2021
 CSE311L,Database Management Systems Lab,1,W,Summer2021
 CSE145,Introduction to Artificial Intelligence,3,B,Summer2021
 CSE226,Fundamentals of Vibe Coding,3,B,Summer2021
-MAT350,Probability & Statistics,3,C+,Summer2021
+MAT240,Probability & Statistics,3,C+,Summer2021
 CSE327,Software Engineering,3,C,Summer2021
 BIO103L,Biology I Lab,1,B-,Summer2021
 CSE311,Database Management Systems,3,F,Fall2021

@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Summer2023
 CSE299,Junior Design Project,1,T,Summer2023
 PHY107,Physics I,3,B+,Summer2023
 PHI104,Introduction to Ethics,3,C,Summer2023
@@ -21,7 +22,7 @@ MAT130,Calculus II,3,A,Spring2024
 EEE452,Engineering Economics,3,T,Spring2024
 GEO205,Geography,3,C+,Spring2024
 CSE499A,Senior Capstone Design I,2,T,Summer2024
-MAT350,Probability & Statistics,3,B,Summer2024
+MAT240,Probability & Statistics,3,B,Summer2024
 HIS102,World Civilization,3,C+,Summer2024
 CSE115,Programming Language I,3,A,Summer2024
 CSE311,Database Management Systems,3,B,Summer2024

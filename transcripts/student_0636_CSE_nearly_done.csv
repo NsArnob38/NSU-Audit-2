@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Fall2022
 CSE231L,Digital Logic Design Lab,1,C-,Fall2022
 BIO103L,Biology I Lab,1,D+,Fall2022
 CSE373,Design & Analysis of Algorithms,3,D,Fall2022
@@ -45,7 +46,7 @@ CSE471,Compiler Design,3,D+,Spring2024
 CSE115L,Programming Language I Lab,1,B,Summer2024
 EEE111,Analog Electronics I,3,A-,Summer2024
 CEE110,Engineering Drawing,1,D+,Summer2024
-MAT350,Probability & Statistics,3,D+,Summer2024
+MAT240,Probability & Statistics,3,D+,Summer2024
 HIS101,Bangladesh History,3,B,Summer2024
 ENG111,Public Speaking,3,C-,Summer2024
 CSE332,Computer Organization & Architecture,3,B-,Summer2024

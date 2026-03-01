@@ -1,6 +1,5 @@
 course_code,course_name,credits,grade,semester
-ENG102,Introduction to Composition,3,T,Fall2019
-MAT116,Pre-Calculus,0,T,Fall2019
+MAT116,Pre-Calculus,3,A-,Fall2019
 CSE115,Programming Language I,3,A,Fall2019
 CSE115L,Programming Language I Lab,1,A,Fall2019
 MAT120,Calculus I,3,A,Fall2019
@@ -26,7 +25,7 @@ CEE110,Engineering Drawing,1,A,Summer2021
 CSE299,Junior Design Project,1,A,Fall2021
 CSE311,Database Management Systems,3,A,Fall2021
 CSE311L,Database Management Systems Lab,1,A,Fall2021
-MAT350,Probability & Statistics,3,A-,Fall2021
+MAT240,Probability & Statistics,3,A-,Fall2021
 CSE323,Operating Systems Design,3,B+,Spring2022
 CSE327,Software Engineering,3,A,Spring2022
 MAT361,Differential Equations,3,B+,Spring2022

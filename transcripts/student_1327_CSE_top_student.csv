@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Summer2019
 CSE499A,Senior Capstone Design I,2,A,Summer2019
 CSE299,Junior Design Project,1,A,Summer2019
 CSE373,Design & Analysis of Algorithms,3,A,Summer2019
@@ -33,7 +34,7 @@ CSE225L,Data Structures & Algorithms Lab,1,A-,Summer2020
 HIS201,Modern History,3,B+,Summer2020
 CSE323,Operating Systems Design,3,A-,Fall2020
 CHE101L,Chemistry I Lab,1,B,Fall2020
-MAT350,Probability & Statistics,3,A-,Fall2020
+MAT240,Probability & Statistics,3,A-,Fall2020
 CSE101,Introduction to Python Programming,3,B,Fall2020
 ENG103,Intermediate Composition,3,A,Fall2020
 HIS102,World Civilization,3,B+,Fall2020

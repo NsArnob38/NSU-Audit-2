@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Spring2020
 CSE225,Data Structures & Algorithms,3,C,Spring2020
 HIS101,Bangladesh History,3,B+,Spring2020
 CSE373,Design & Analysis of Algorithms,3,C-,Spring2020
@@ -45,7 +46,7 @@ EEE111,Analog Electronics I,3,B+,Spring2022
 BIO103L,Biology I Lab,1,B-,Spring2022
 PHY108,Physics II,3,B-,Spring2022
 PHY107L,Physics I Lab,1,C+,Spring2022
-MAT350,Probability & Statistics,3,A-,Spring2022
+MAT240,Probability & Statistics,3,A-,Spring2022
 CSE499A,Senior Capstone Design I,2,A-,Spring2022
 CSE471,Compiler Design,3,B-,Spring2022
 ENG103,Intermediate Composition,3,A,Summer2022

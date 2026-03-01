@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Fall2020
 CSE215L,Programming Language II Lab,1,A-,Fall2020
 MAT125,Linear Algebra,3,B,Spring2021
 HIS101,Bangladesh History,3,C,Spring2021
@@ -26,6 +27,6 @@ CSE331,Microprocessor Interfacing,3,F,Fall2022
 PHY108,Physics II,3,W,Spring2023
 ENG105,Advanced Composition,3,B,Spring2023
 EEE111L,Analog Electronics I Lab,1,A-,Spring2023
-MAT350,Probability & Statistics,3,D+,Summer2023
+MAT240,Probability & Statistics,3,D+,Summer2023
 PHY108L,Physics II Lab,1,B,Summer2023
 CSE115,Programming Language I,3,B+,Summer2023

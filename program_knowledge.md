@@ -21,14 +21,14 @@
 ## CSE Program (BSCSE -- 134 Credits)
 
 ### Graduation Requirements
-- Minimum **134 credits** (reducible if MAT116 waived via transfer)
+- Minimum **134 credits** (reducible if MAT112 waived via transfer)
 - Overall CGPA >= **2.00**
-- Major CGPA >= **2.50**
+- Major CGPA >= **2.00**
 - Probation if CGPA < 2.00
 
 ### Waivable Courses
 - **ENG102** (0 credits): Waived if student scores >=60% on English portion of NSU admission test
-- **MAT116** (3 credits): Waived if student scores >=60% on Math portion of NSU admission test
+- **MAT112** (0 credits): Waived if student scores >=60% on Math portion of NSU admission test (College Algebra)
 
 ---
 

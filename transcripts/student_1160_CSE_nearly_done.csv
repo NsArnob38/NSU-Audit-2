@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Fall2021
 CHE101,Chemistry I,3,B,Fall2021
 CSE231,Digital Logic Design,3,A-,Fall2021
 ENG111,Public Speaking,3,D,Fall2021
@@ -14,7 +15,7 @@ CSE331,Microprocessor Interfacing,3,B-,Fall2021
 ECO104,Intro to Macroeconomics,3,B+,Fall2021
 PHY108L,Physics II Lab,1,B+,Spring2022
 BIO103L,Biology I Lab,1,A,Spring2022
-MAT350,Probability & Statistics,3,W,Spring2022
+MAT240,Probability & Statistics,3,W,Spring2022
 PHY107,Physics I,3,D,Spring2022
 CSE173,Discrete Mathematics,3,A-,Spring2022
 CSE299,Junior Design Project,1,B+,Spring2022

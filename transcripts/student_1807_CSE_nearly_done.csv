@@ -1,5 +1,6 @@
 course_code,course_name,credits,grade,semester
-MAT350,Probability & Statistics,3,B+,Summer2023
+MAT116,Pre-Calculus,3,A-,Summer2023
+MAT240,Probability & Statistics,3,B+,Summer2023
 CSE373,Design & Analysis of Algorithms,3,B-,Summer2023
 ENG103,Intermediate Composition,3,A-,Summer2023
 CSE332,Computer Organization & Architecture,3,A,Summer2023

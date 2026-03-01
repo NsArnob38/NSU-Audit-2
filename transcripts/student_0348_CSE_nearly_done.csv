@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Spring2024
 CSE173,Discrete Mathematics,3,C,Spring2024
 CSE231,Digital Logic Design,3,C+,Spring2024
 CSE225L,Data Structures & Algorithms Lab,1,F,Spring2024
@@ -43,7 +44,7 @@ CSE499B,Senior Capstone Design II,2,B,Fall2024
 CSE215L,Programming Language II Lab,1,B-,Fall2024
 CSE311L,Database Management Systems Lab,1,D,Fall2024
 CSE373,Design & Analysis of Algorithms,3,D,Fall2024
-MAT350,Probability & Statistics,3,D,Fall2024
+MAT240,Probability & Statistics,3,D,Fall2024
 HIS102,World Civilization,3,B+,Fall2024
 HIS101,Bangladesh History,3,B,Fall2024
 BIO103,Biology I,3,A,Fall2024

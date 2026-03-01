@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Summer2021
 MAT361,Differential Equations,3,B,Summer2021
 PHY107,Physics I,3,B,Summer2021
 EEE141,Electrical Circuits I,3,A-,Summer2021
@@ -23,7 +24,7 @@ CSE225,Data Structures & Algorithms,3,A-,Spring2023
 HIS101,Bangladesh History,3,B-,Spring2023
 MAT125,Linear Algebra,3,B-,Spring2023
 CSE423,Data Mining,3,C+,Spring2023
-MAT350,Probability & Statistics,3,C+,Summer2023
+MAT240,Probability & Statistics,3,C+,Summer2023
 PHY107L,Physics I Lab,1,B+,Summer2023
 CSE323,Operating Systems Design,3,A,Summer2023
 CSE101,Introduction to Python Programming,3,A-,Summer2023

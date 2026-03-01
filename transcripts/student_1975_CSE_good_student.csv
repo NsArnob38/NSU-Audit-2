@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Summer2021
 CSE173,Discrete Mathematics,3,B,Summer2021
 CSE225L,Data Structures & Algorithms Lab,1,A-,Summer2021
 BIO103,Biology I,3,B,Summer2021
@@ -16,7 +17,7 @@ CSE311L,Database Management Systems Lab,1,B+,Spring2022
 CSE425,Concepts of Programming Languages,3,B-,Spring2022
 ANT101,Anthropology,3,B-,Spring2022
 EEE111,Analog Electronics I,3,A-,Summer2022
-MAT350,Probability & Statistics,3,B,Summer2022
+MAT240,Probability & Statistics,3,B,Summer2022
 MAT125,Linear Algebra,3,B-,Summer2022
 HIS102,World Civilization,3,C,Summer2022
 CSE331,Microprocessor Interfacing,3,B-,Summer2022

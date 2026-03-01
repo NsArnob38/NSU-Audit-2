@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Summer2021
 CSE332,Computer Organization & Architecture,3,A-,Summer2021
 EEE141,Electrical Circuits I,3,A-,Summer2021
 CSE225,Data Structures & Algorithms,3,C+,Summer2021
@@ -12,7 +13,7 @@ CSE323,Operating Systems Design,3,T,Spring2022
 EEE111L,Analog Electronics I Lab,1,A-,Spring2022
 PHY107L,Physics I Lab,1,T,Spring2022
 CSE231L,Digital Logic Design Lab,1,B,Spring2022
-MAT350,Probability & Statistics,3,C,Spring2022
+MAT240,Probability & Statistics,3,C,Spring2022
 CSE115L,Programming Language I Lab,1,T,Spring2022
 CSE215,Programming Language II,3,T,Spring2022
 CSE311L,Database Management Systems Lab,1,B,Spring2022

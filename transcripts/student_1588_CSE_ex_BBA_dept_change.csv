@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Fall2020
 MIS107,Introduction to Computers,3,A,Fall2020
 BUS251,Business Communication,3,A-,Fall2020
 MGT314,Production Management,3,B-,Fall2020
@@ -30,7 +31,7 @@ PHY107L,Physics I Lab,1,A,Spring2022
 PHY108L,Physics II Lab,1,B,Fall2022
 CSE101,Introduction to Python Programming,3,D+,Fall2022
 PHI104,Introduction to Ethics,3,A-,Fall2022
-MAT350,Probability & Statistics,3,B,Fall2022
+MAT240,Probability & Statistics,3,B,Fall2022
 EEE141L,Electrical Circuits I Lab,1,C+,Fall2022
 CSE115,Programming Language I,3,B-,Fall2022
 EEE111,Analog Electronics I,3,D,Fall2022

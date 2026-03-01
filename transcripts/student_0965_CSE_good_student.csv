@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Spring2021
 CHE101L,Chemistry I Lab,1,B-,Spring2021
 CSE499A,Senior Capstone Design I,2,C,Spring2021
 BIO103L,Biology I Lab,1,B,Spring2021
@@ -28,7 +29,7 @@ PHY107L,Physics I Lab,1,B+,Spring2022
 EEE452,Engineering Economics,3,C,Spring2022
 CSE231L,Digital Logic Design Lab,1,C,Spring2022
 CSE115,Programming Language I,3,A-,Spring2022
-MAT350,Probability & Statistics,3,C+,Summer2022
+MAT240,Probability & Statistics,3,C+,Summer2022
 PHY108,Physics II,3,A,Summer2022
 MAT250,Calculus III,3,B,Summer2022
 CSE145,Introduction to Artificial Intelligence,3,B,Summer2022

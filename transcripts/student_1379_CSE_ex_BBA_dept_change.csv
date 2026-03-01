@@ -1,11 +1,12 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Fall2022
 LAW200,Legal Environment of Business,3,D+,Fall2022
 MGT314,Production Management,3,C+,Fall2022
 BUS172,Introduction to Statistics,3,C+,Spring2023
 MKT202,Introduction to Marketing,3,B,Spring2023
 ACT201,Intro to Financial Accounting,3,C,Spring2023
 INB372,International Business,3,B-,Spring2023
-MAT350,Probability & Statistics,3,B-,Summer2023
+MAT240,Probability & Statistics,3,B-,Summer2023
 PHY108,Physics II,3,C+,Summer2023
 CSE311L,Database Management Systems Lab,1,C-,Summer2023
 PHY107,Physics I,3,D,Summer2023

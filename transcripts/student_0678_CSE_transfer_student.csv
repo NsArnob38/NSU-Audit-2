@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Summer2020
 CEE110,Engineering Drawing,1,B+,Summer2020
 EEE141,Electrical Circuits I,3,B+,Summer2020
 ENG103,Intermediate Composition,3,A,Summer2020
@@ -25,7 +26,7 @@ CSE332,Computer Organization & Architecture,3,C+,Spring2022
 CSE226,Fundamentals of Vibe Coding,3,T,Spring2022
 BIO103,Biology I,3,B+,Spring2022
 CSE299,Junior Design Project,1,C+,Summer2022
-MAT350,Probability & Statistics,3,B,Summer2022
+MAT240,Probability & Statistics,3,B,Summer2022
 CSE225,Data Structures & Algorithms,3,A,Summer2022
 ENG111,Public Speaking,3,C,Summer2022
 CSE225L,Data Structures & Algorithms Lab,1,A-,Summer2022

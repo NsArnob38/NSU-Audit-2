@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Spring2019
 CSE145,Introduction to Artificial Intelligence,3,B,Spring2019
 ENG105,Advanced Composition,3,B+,Spring2019
 CSE299,Junior Design Project,1,C-,Spring2019
@@ -8,7 +9,7 @@ CSE225,Data Structures & Algorithms,3,D,Spring2019
 MAT125,Linear Algebra,3,C,Spring2019
 CSE101,Introduction to Python Programming,3,B-,Spring2019
 EEE111,Analog Electronics I,3,A-,Summer2019
-MAT350,Probability & Statistics,3,B+,Summer2019
+MAT240,Probability & Statistics,3,B+,Summer2019
 HIS101,Bangladesh History,3,D+,Fall2019
 EEE141L,Electrical Circuits I Lab,1,B,Fall2019
 CSE115L,Programming Language I Lab,1,C+,Fall2019

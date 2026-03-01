@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Summer2023
 CSE173,Discrete Mathematics,3,C+,Summer2023
 CHE101L,Chemistry I Lab,1,D,Summer2023
 CSE311L,Database Management Systems Lab,1,C+,Summer2023
@@ -17,7 +18,7 @@ EEE452,Engineering Economics,3,B,Fall2023
 CSE115L,Programming Language I Lab,1,D+,Fall2023
 POL101,Intro to Political Science,3,D+,Fall2023
 CSE226,Fundamentals of Vibe Coding,3,D+,Spring2024
-MAT350,Probability & Statistics,3,D,Spring2024
+MAT240,Probability & Statistics,3,D,Spring2024
 CSE323,Operating Systems Design,3,C-,Spring2024
 CSE225,Data Structures & Algorithms,3,C-,Spring2024
 ANT101,Anthropology,3,D+,Spring2024

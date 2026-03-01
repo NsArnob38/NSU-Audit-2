@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Fall2019
 BIO103L,Biology I Lab,1,B+,Fall2019
 MAT120,Calculus I,3,T,Fall2019
 CSE101,Introduction to Python Programming,3,T,Fall2019
@@ -28,7 +29,7 @@ EEE141,Electrical Circuits I,3,A,Spring2020
 PHY108,Physics II,3,B+,Spring2020
 ECO104,Intro to Macroeconomics,3,T,Spring2020
 SOC101,Intro to Sociology,3,B+,Spring2020
-MAT350,Probability & Statistics,3,C,Summer2020
+MAT240,Probability & Statistics,3,C,Summer2020
 CSE225,Data Structures & Algorithms,3,A-,Summer2020
 EEE141L,Electrical Circuits I Lab,1,T,Summer2020
 CSE425,Concepts of Programming Languages,3,B+,Summer2020

@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Summer2019
 CSE231,Digital Logic Design,3,B+,Summer2019
 ENG105,Advanced Composition,3,A,Summer2019
 CHE101L,Chemistry I Lab,1,B-,Summer2019
@@ -24,7 +25,7 @@ CSE226,Fundamentals of Vibe Coding,3,B,Fall2020
 CSE499A,Senior Capstone Design I,2,A-,Fall2020
 CSE421,Machine Learning,3,A,Fall2020
 CSE461,Robotics,3,A,Fall2020
-MAT350,Probability & Statistics,3,C+,Spring2021
+MAT240,Probability & Statistics,3,C+,Spring2021
 CSE225L,Data Structures & Algorithms Lab,1,B-,Spring2021
 CSE115,Programming Language I,3,B-,Spring2021
 BIO103L,Biology I Lab,1,A,Spring2021

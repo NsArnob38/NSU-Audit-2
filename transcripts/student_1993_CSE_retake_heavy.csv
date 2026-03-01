@@ -1,7 +1,8 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Fall2019
 CSE225L,Data Structures & Algorithms Lab,1,C,Fall2019
 CSE101,Introduction to Python Programming,3,F,Fall2019
-MAT350,Probability & Statistics,3,F,Fall2019
+MAT240,Probability & Statistics,3,F,Fall2019
 CSE145,Introduction to Artificial Intelligence,3,F,Fall2019
 SOC101,Intro to Sociology,3,D+,Fall2019
 EEE141,Electrical Circuits I,3,D+,Spring2020

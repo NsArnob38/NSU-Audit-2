@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Summer2021
 CSE115,Programming Language I,3,C+,Summer2021
 BIO103,Biology I,3,C+,Summer2021
 ENG105,Advanced Composition,3,C+,Summer2021
@@ -30,7 +31,7 @@ EEE141,Electrical Circuits I,3,B-,Spring2022
 HIS101,Bangladesh History,3,A-,Spring2022
 CSE225,Data Structures & Algorithms,3,B-,Spring2022
 CSE499B,Senior Capstone Design II,2,B+,Spring2022
-MAT350,Probability & Statistics,3,A-,Spring2022
+MAT240,Probability & Statistics,3,A-,Spring2022
 CSE231,Digital Logic Design,3,B+,Spring2022
 PHY108,Physics II,3,B-,Spring2022
 CHE101,Chemistry I,3,B-,Spring2022

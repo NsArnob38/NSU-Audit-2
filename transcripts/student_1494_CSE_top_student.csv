@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Spring2020
 PHI104,Introduction to Ethics,3,A,Spring2020
 CSE226,Fundamentals of Vibe Coding,3,B,Spring2020
 CSE311L,Database Management Systems Lab,1,A,Spring2020
@@ -17,7 +18,7 @@ CSE323,Operating Systems Design,3,A,Fall2020
 CSE311,Database Management Systems,3,A,Fall2020
 CSE115L,Programming Language I Lab,1,A-,Spring2021
 BIO103,Biology I,3,A-,Spring2021
-MAT350,Probability & Statistics,3,B-,Spring2021
+MAT240,Probability & Statistics,3,B-,Spring2021
 CSE332,Computer Organization & Architecture,3,A-,Spring2021
 EEE111L,Analog Electronics I Lab,1,B-,Spring2021
 CSE225,Data Structures & Algorithms,3,B+,Summer2021

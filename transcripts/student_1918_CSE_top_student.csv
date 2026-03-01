@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Fall2022
 EEE141,Electrical Circuits I,3,A-,Fall2022
 CSE231,Digital Logic Design,3,A,Fall2022
 CSE311L,Database Management Systems Lab,1,A-,Fall2022
@@ -55,4 +56,4 @@ CHE101,Chemistry I,3,A,Summer2024
 CSE173,Discrete Mathematics,3,A,Summer2024
 CSE323,Operating Systems Design,3,A,Summer2024
 EEE111L,Analog Electronics I Lab,1,A,Summer2024
-MAT350,Probability & Statistics,3,A,Summer2024
+MAT240,Probability & Statistics,3,A,Summer2024

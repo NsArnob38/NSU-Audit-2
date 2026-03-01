@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Summer2019
 MIS207,Management Information Systems,3,D+,Summer2019
 ECO101,Intro to Microeconomics,3,C+,Summer2019
 MGT212,Principles of Management,3,D,Summer2019
@@ -21,7 +22,7 @@ ENG103,Intermediate Composition,3,F,Spring2021
 CSE101,Introduction to Python Programming,3,C+,Spring2021
 CSE215L,Programming Language II Lab,1,A,Spring2021
 CSE499A,Senior Capstone Design I,2,B,Spring2021
-MAT350,Probability & Statistics,3,C+,Summer2021
+MAT240,Probability & Statistics,3,C+,Summer2021
 ENG105,Advanced Composition,3,F,Summer2021
 PHY107L,Physics I Lab,1,D,Summer2021
 MAT130,Calculus II,3,C,Summer2021

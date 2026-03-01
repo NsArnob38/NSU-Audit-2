@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Fall2023
 CSE173,Discrete Mathematics,3,F,Fall2023
 BIO103,Biology I,3,F,Fall2023
 CHE101L,Chemistry I Lab,1,D+,Fall2023
@@ -18,7 +19,7 @@ CEE110,Engineering Drawing,1,D,Spring2024
 ENG105,Advanced Composition,3,D,Summer2024
 CSE311,Database Management Systems,3,I,Summer2024
 CSE173,Discrete Mathematics,3,C+,Summer2024
-MAT350,Probability & Statistics,3,D,Summer2024
+MAT240,Probability & Statistics,3,D,Summer2024
 HIS102,World Civilization,3,F,Summer2024
 CSE226,Fundamentals of Vibe Coding,3,D,Summer2024
 BIO103L,Biology I Lab,1,C,Summer2024

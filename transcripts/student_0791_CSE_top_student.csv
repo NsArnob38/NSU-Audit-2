@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Fall2020
 CSE373,Design & Analysis of Algorithms,3,A-,Fall2020
 CSE499A,Senior Capstone Design I,2,B,Fall2020
 EEE111L,Analog Electronics I Lab,1,A,Fall2020
@@ -54,5 +55,5 @@ ENG105,Advanced Composition,3,A,Spring2023
 EEE141,Electrical Circuits I,3,A-,Spring2023
 CHE101,Chemistry I,3,A,Spring2023
 BIO103L,Biology I Lab,1,B+,Spring2023
-MAT350,Probability & Statistics,3,A,Spring2023
+MAT240,Probability & Statistics,3,A,Spring2023
 GEO205,Geography,3,A,Spring2023

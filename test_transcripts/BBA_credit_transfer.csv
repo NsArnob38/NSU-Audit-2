@@ -1,11 +1,4 @@
 course_code,course_name,credits,grade,semester
-ECO101,Intro to Microeconomics,3,T,Transfer
-BUS135,Business Mathematics,3,T,Transfer
-MIS107,Introduction to Computers,3,T,Transfer
-ENG103,Intermediate Composition,3,T,Transfer
-BUS172,Introduction to Statistics,3,T,Transfer
-ACT201,Intro to Financial Accounting,3,T,Transfer
-PHI401,Ethics / Philosophy,3,T,Transfer
 BUS173,Applied Statistics,3,A,Fall2020
 FIN254,Intro to Financial Management,3,B+,Fall2020
 MKT202,Introduction to Marketing,3,A-,Spring2021
@@ -15,5 +8,3 @@ LAW200,Legal Environment of Business,3,B+,Summer2021
 MGT351,Human Resource Management,3,A,Fall2021
 INB372,International Business,3,A-,Spring2022
 MGT489,Strategic Management,3,A,Spring2022
-ENG102,Introduction to Composition,3,T,waiver
-BUS112,Intro to Business Mathematics,3,T,waiver

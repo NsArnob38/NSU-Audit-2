@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Fall2020
 CSE311L,Database Management Systems Lab,1,A-,Fall2020
 MAT361,Differential Equations,3,A,Fall2020
 CEE110,Engineering Drawing,1,T,Fall2020
@@ -30,6 +31,6 @@ SOC101,Intro to Sociology,3,A,Spring2022
 CSE499A,Senior Capstone Design I,2,T,Summer2022
 CSE327,Software Engineering,3,B,Summer2022
 HIS101,Bangladesh History,3,T,Summer2022
-MAT350,Probability & Statistics,3,A-,Summer2022
+MAT240,Probability & Statistics,3,A-,Summer2022
 EEE141L,Electrical Circuits I Lab,1,B,Summer2022
 ECO104,Intro to Macroeconomics,3,C+,Summer2022

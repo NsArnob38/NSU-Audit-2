@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Summer2019
 CSE231,Digital Logic Design,3,B,Summer2019
 PHY107,Physics I,3,B,Summer2019
 CSE215,Programming Language II,3,A,Summer2019
@@ -48,7 +49,7 @@ CSE215L,Programming Language II Lab,1,B-,Spring2021
 HIS101,Bangladesh History,3,B+,Spring2021
 HIS102,World Civilization,3,B,Spring2021
 CSE332,Computer Organization & Architecture,3,B-,Spring2021
-MAT350,Probability & Statistics,3,A,Spring2021
+MAT240,Probability & Statistics,3,A,Spring2021
 MAT250,Calculus III,3,B-,Spring2021
 CSE225,Data Structures & Algorithms,3,B,Spring2021
 PHY108,Physics II,3,B,Spring2021

@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Spring2019
 MAT250,Calculus III,3,B,Spring2019
 CSE327,Software Engineering,3,C+,Spring2019
 ENG111,Public Speaking,3,A,Spring2019
@@ -39,7 +40,7 @@ CSE323,Operating Systems Design,3,B+,Summer2020
 CSE299,Junior Design Project,1,A-,Summer2020
 CSE423,Data Mining,3,B-,Summer2020
 CSE311L,Database Management Systems Lab,1,A-,Fall2020
-MAT350,Probability & Statistics,3,B+,Fall2020
+MAT240,Probability & Statistics,3,B+,Fall2020
 CSE331L,Microprocessor Interfacing Lab,1,B+,Fall2020
 BIO103L,Biology I Lab,1,A,Fall2020
 CSE226,Fundamentals of Vibe Coding,3,C+,Fall2020

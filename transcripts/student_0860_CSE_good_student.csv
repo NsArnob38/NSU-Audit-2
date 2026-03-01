@@ -1,6 +1,7 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Summer2020
 EEE111,Analog Electronics I,3,B,Summer2020
-MAT350,Probability & Statistics,3,C,Summer2020
+MAT240,Probability & Statistics,3,C,Summer2020
 ENG111,Public Speaking,3,A,Summer2020
 MAT361,Differential Equations,3,C,Summer2020
 MAT130,Calculus II,3,B+,Summer2020

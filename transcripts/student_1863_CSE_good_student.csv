@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Fall2023
 EEE111,Analog Electronics I,3,B-,Fall2023
 CSE299,Junior Design Project,1,B,Fall2023
 CSE173,Discrete Mathematics,3,B+,Fall2023
@@ -24,7 +25,7 @@ HIS102,World Civilization,3,B,Fall2023
 POL104,Political Science,3,B+,Fall2023
 SOC201,Social Theory,3,B+,Fall2023
 PHY107L,Physics I Lab,1,B-,Spring2024
-MAT350,Probability & Statistics,3,C,Spring2024
+MAT240,Probability & Statistics,3,C,Spring2024
 CSE231,Digital Logic Design,3,B-,Spring2024
 PHY107,Physics I,3,B,Spring2024
 MAT130,Calculus II,3,C-,Spring2024

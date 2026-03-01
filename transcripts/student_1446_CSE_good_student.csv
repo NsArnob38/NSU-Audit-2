@@ -1,5 +1,6 @@
 course_code,course_name,credits,grade,semester
-MAT350,Probability & Statistics,3,A-,Summer2019
+MAT116,Pre-Calculus,3,A-,Summer2019
+MAT240,Probability & Statistics,3,A-,Summer2019
 CSE311,Database Management Systems,3,A-,Summer2019
 CSE332,Computer Organization & Architecture,3,B-,Summer2019
 CSE327,Software Engineering,3,A,Summer2019

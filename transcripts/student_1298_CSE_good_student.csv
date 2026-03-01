@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Spring2022
 CSE311L,Database Management Systems Lab,1,C-,Spring2022
 PHY108,Physics II,3,B-,Spring2022
 CSE101,Introduction to Python Programming,3,B+,Spring2022
@@ -42,7 +43,7 @@ CSE323,Operating Systems Design,3,B+,Fall2023
 PHY108L,Physics II Lab,1,B,Fall2023
 CHE101L,Chemistry I Lab,1,A,Fall2023
 CSE231L,Digital Logic Design Lab,1,B+,Fall2023
-MAT350,Probability & Statistics,3,B+,Fall2023
+MAT240,Probability & Statistics,3,B+,Fall2023
 ECO101,Intro to Microeconomics,3,B,Fall2023
 ANT101,Anthropology,3,B,Fall2023
 CSE471,Compiler Design,3,A-,Fall2023

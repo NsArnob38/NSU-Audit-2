@@ -1,7 +1,8 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Summer2019
 CSE231L,Digital Logic Design Lab,1,C,Summer2019
 PHY107L,Physics I Lab,1,C-,Summer2019
-MAT350,Probability & Statistics,3,D+,Fall2019
+MAT240,Probability & Statistics,3,D+,Fall2019
 BIO103L,Biology I Lab,1,B,Fall2019
 HIS101,Bangladesh History,3,C-,Summer2020
 POL101,Intro to Political Science,3,C,Summer2020

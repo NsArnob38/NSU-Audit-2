@@ -1,4 +1,5 @@
 course_code,course_name,credits,grade,semester
+MAT116,Pre-Calculus,3,A-,Summer2021
 MAT120,Calculus I,3,D,Summer2021
 ENG103,Intermediate Composition,3,B,Summer2021
 MAT361,Differential Equations,3,B,Summer2021
@@ -46,7 +47,7 @@ CSE311,Database Management Systems,3,B-,Spring2023
 CSE445,Computer Vision,3,B,Spring2023
 CSE332,Computer Organization & Architecture,3,B+,Summer2023
 CSE327,Software Engineering,3,A,Summer2023
-MAT350,Probability & Statistics,3,D,Summer2023
+MAT240,Probability & Statistics,3,D,Summer2023
 PHI104,Introduction to Ethics,3,C+,Summer2023
 CSE173,Discrete Mathematics,3,A,Summer2023
 CSE323,Operating Systems Design,3,A-,Summer2023
