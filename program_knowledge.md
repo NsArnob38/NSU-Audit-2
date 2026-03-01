@@ -38,13 +38,11 @@
 |---------|----------------------------------------|----|----------------|
 | CSE 115 | Programming Language I                 | 3  | Core           |
 | CSE 115L| Programming Language I Lab             | 1  | Core Lab       |
-| CSE 135 | Fundamentals of Computer Programming   | 3  | Core           |
-| CSE 135L| Fundamentals of Programming Lab        | 1  | Core Lab       |
 | CSE 173 | Discrete Mathematics                   | 3  | Core           |
 | CSE 225 | Data Structures & Algorithms           | 3  | Core           |
 | CSE 225L| Data Structures & Algorithms Lab       | 1  | Core Lab       |
 | CSE 231 | Digital Logic Design                   | 3  | Core           |
-| CSE 232 | Computer Organization and Design       | 3  | Core           |
+| CSE 332 | Computer Organization and Design       | 3  | Core           |
 | CSE 243 | Electrical Circuits                    | 3  | Core           |
 | CSE 243L| Electrical Circuits Lab                | 1  | Core Lab       |
 | CSE 253 | Electronics                            | 3  | Core           |
@@ -72,7 +70,6 @@
 | MAT 120 | Calculus II                    | 3  | Math Core      |
 | MAT 125 | Linear Algebra                 | 3  | Math Core      |
 | MAT 130 | Calculus III                   | 3  | Math Core      |
-| MAT 240 | Probability and Statistics     | 3  | Math Core      |
 | MAT 250 | Differential Equations         | 3  | Math Core      |
 | MAT 350 | Complex Variables              | 3  | Math Core      |
 | MAT 361 | Discrete Mathematics II        | 3  | Math Core      |
@@ -311,3 +308,33 @@ Any 2 courses from any department.
 | Code    | Course Name | Cr |
 |---------|-------------|----|
 | BUS 498 | Internship  | 4  |
+
+---
+
+## Course Prerequisite Mapping
+
+### CSE Program (Core Chains)
+- **MAT116** → **MAT120**
+- **MAT120** → **MAT130** & **PHY107**
+- **MAT130** → **MAT250**
+- **MAT250** → **MAT350**
+- **CSE115** → **CSE173**
+- **CSE173** → **CSE215**
+- **CSE215** → **CSE225**
+- **CSE225** → **CSE311** & **CSE373**
+- **CSE225** + **CSE173** → **CSE231**
+- **CSE231** → **CSE332**
+- **CSE332** → **CSE323**
+- **Senior Status** (100+ Credits) → **CSE499**
+
+### BBA Program (Core Chains)
+- **MAT112** → **BUS135**
+- **BUS135** → **BUS172**
+- **BUS172** → **BUS173**
+- **ENG102** → **ENG103**
+- **ENG103** → **ENG105**
+- **ACT201** → **ACT202**
+- **ACT201** + **BUS172** → **FIN254**
+- **ECO101** → **ECO104**
+- **MGT210** → **MGT351** or **MGT314**
+- **Senior Status** + **FIN254** + **MKT202** + **MGT210** → **MGT489**

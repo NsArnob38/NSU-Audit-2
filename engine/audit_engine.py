@@ -7,6 +7,7 @@ Current curriculum: Post-Fall 2014 (130 credits for both CSE and BBA)
 """
 
 from engine.cgpa_engine import compute_major_cgpa
+from engine.credit_engine import SEMESTERS
 
 # ─────────────────────────────────────────────────────
 # CSE PROGRAM REQUIREMENTS (130 credits)
@@ -45,7 +46,6 @@ CSE_SEPS_CORE = {
     "MAT130": 3,                              # Calculus II
     "MAT250": 3,                              # Calculus III
     "MAT125": 3,                              # Linear Algebra
-    "MAT240": 3,                              # Probability & Statistics
     "MAT350": 3,                              # Complex Variables
     "MAT361": 3,                              # Discrete Mathematics II
     "PHY107": 3, "PHY107L": 1,                # Physics I
@@ -238,6 +238,56 @@ BBA_CONCENTRATIONS = {
 
 VALID_CONCENTRATIONS = set(BBA_CONCENTRATIONS.keys())
 
+# ─────────────────────────────────────────────────────
+# PREREQUISITE MAPPING
+# ─────────────────────────────────────────────────────
+
+from engine.prerequisites import PREREQUISITES_CSE, PREREQUISITES_BBA
+
+
+def check_prerequisite_violations(program, records, waivers):
+    """
+    Check if any courses in records were taken before their prerequisites were passed.
+    Returns a list of dicts: {"course": code, "missing": [missing_prereqs]}
+    """
+    # Prerequisites MUST be checked chronologically
+    sem_map = {sem: i for i, sem in enumerate(SEMESTERS)}
+    chrono_records = sorted(records, key=lambda r: sem_map.get(r.semester, -1))
+    
+    prereq_map = PREREQUISITES_CSE if program.upper() == "CSE" else PREREQUISITES_BBA
+    passed_so_far = set(k for k, v in waivers.items() if v)  # Only true waivers count
+    violations = []
+    
+    # Track credits earned at each step for senior status check
+    credits_at_step = 0
+    
+    for r in chrono_records:
+        code = r.course_code
+        if code in prereq_map:
+            required = prereq_map[code]
+            missing = []
+            for req in required:
+                if req == "_SENIOR_":
+                    if credits_at_step < 100:
+                        missing.append("Senior Status (100+ Credits)")
+                elif req not in passed_so_far:
+                    missing.append(req)
+            
+            if missing:
+                violations.append({
+                    "course": code,
+                    "semester": r.semester,
+                    "missing": missing
+                })
+        
+        # If passed (not F/W/I), add to passed_so_far
+        if r.grade not in ("F", "W", "I"):
+            passed_so_far.add(code)
+            # Add to credits for senior status check
+            credits_at_step += r.credits
+            
+    return violations
+
 
 def _get_passed_courses(records):
     """Return set of course codes that the student has passed (BEST or WAIVED status)."""
@@ -380,7 +430,7 @@ def audit_cse(records, waivers, credits_earned, cgpa, credit_reduction=0):
         total_missing = sum(len(v) for v in remaining.values())
         reasons.append(f"{total_missing} required course(s) still missing")
 
-    return {
+    result = {
         "eligible": eligible,
         "reasons": reasons,
         "remaining": remaining,
@@ -388,6 +438,11 @@ def audit_cse(records, waivers, credits_earned, cgpa, credit_reduction=0):
         "major_elective_cgpa": major_elective_cgpa,
         "total_credits_required": total_required,
     }
+    
+    # ── Prerequisites ──
+    result["prereq_violations"] = check_prerequisite_violations("CSE", records, waivers)
+
+    return result
 
 
 def audit_bba(records, waivers, credits_earned, cgpa, credit_reduction=0, concentration=None):
@@ -555,7 +610,7 @@ def audit_bba(records, waivers, credits_earned, cgpa, credit_reduction=0, concen
         total_missing = sum(len(v) for v in remaining.values())
         reasons.append(f"{total_missing} required course(s) still missing")
 
-    return {
+    result = {
         "eligible": eligible,
         "reasons": reasons,
         "remaining": remaining,
@@ -564,6 +619,11 @@ def audit_bba(records, waivers, credits_earned, cgpa, credit_reduction=0, concen
         "concentration_label": conc_label,
         "total_credits_required": total_required,
     }
+    
+    # ── Prerequisites ──
+    result["prereq_violations"] = check_prerequisite_violations("BBA", records, waivers)
+
+    return result
 
 
 def build_graduation_roadmap(program, records, credits_earned, cgpa, major_cgpa, audit_result, standing):

@@ -144,13 +144,32 @@ def print_normal_report(filepath, program, records, credits_attempted, credits_e
         print(f"  Graduation Eligible: {color('NO', RED)}")
         for r in reasons:
             print(f"    {color('X', RED)} {r}")
-
+    
     print("=" * 50)
+
+def print_prerequisite_violations(violations):
+    """Print detailed prerequisite violations."""
+    print(section_bar("PREREQUISITE VIOLATIONS"))
+    print(f"  {color('CAUTION:', RED)} The following courses were taken without passing prerequisites.")
+    print("  This may lead to credit cancellation or administrative holds.\n")
+    
+    for v in violations:
+        course = v["course"]
+        sem = v["semester"]
+        missing = ", ".join(v["missing"])
+        print(f"    {color('!', RED)} {color(course, BOLD)} (taken in {sem})")
+        print(f"       Missing: {color(missing, YELLOW)}")
+    print()
 
 def print_full_report(filepath, program, records, credits_attempted, credits_earned, cgpa_data, audit_result):
     """Print the full report: Summary + Result Sheet + Roadmap + Missing Courses."""
     # 1. Start with Normal (Summary)
     print_normal_report(filepath, program, records, credits_attempted, credits_earned, cgpa_data, audit_result)
+    
+    # 2. Prerequisite Detail (If any)
+    violations = audit_result.get("prereq_violations", [])
+    if violations:
+        print_prerequisite_violations(violations)
     
     # 2. Course Result Sheet
     print(section_bar("COURSE RESULT SHEET"))

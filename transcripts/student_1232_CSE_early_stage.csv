@@ -1,9 +1,10 @@
 course_code,course_name,credits,grade,semester
-MAT116,Pre-Calculus,3,A-,Fall2019
-EEE111L,Analog Electronics I Lab,1,B,Fall2019
-PHY108L,Physics II Lab,1,F,Summer2021
-CSE331L,Microprocessor Interfacing Lab,1,B,Spring2022
-MAT250,Calculus III,3,C+,Spring2022
-ENG105,Advanced Composition,3,A-,Spring2022
-MAT361,Differential Equations,3,D+,Spring2022
-CSE173,Discrete Mathematics,3,C,Summer2022
+CSE115,Programming Language I,3,B-,Spring2019
+MAT116,Pre-Calculus,3,B+,Spring2019
+CSE311L,Database Management Systems Lab,1,D,Spring2019
+MAT125,Linear Algebra,3,C-,Spring2019
+CSE173,Discrete Mathematics,3,C,Summer2019
+MAT120,Calculus I,3,A,Summer2019
+ENG105,Advanced Composition,3,C+,Summer2019
+HIS101,Bangladesh History,3,A,Summer2019
+CSE215L,Programming Language II Lab,1,A-,Summer2019

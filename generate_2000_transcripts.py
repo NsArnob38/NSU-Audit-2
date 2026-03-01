@@ -10,6 +10,7 @@ import os
 import random
 import sys
 from engine.credit_engine import SEMESTERS
+from engine.prerequisites import PREREQUISITES_CSE, PREREQUISITES_BBA
 
 try:
     sys.stdout.reconfigure(encoding='utf-8', errors='replace')
@@ -59,7 +60,6 @@ CSE_SEPS_CORE = {
     "MAT125": ("Linear Algebra", 3),
     "MAT130": ("Calculus II", 3),
     "MAT250": ("Calculus III", 3),
-    "MAT240": ("Probability & Statistics", 3),
     "MAT350": ("Complex Variables", 3),
     "MAT361": ("Discrete Mathematics II", 3),
     "PHY107": ("Physics I", 3),
@@ -309,268 +309,344 @@ def pick_semesters(n, start_idx=None):
     return SEMESTERS[start_idx:end]
 
 
+def get_eligible_courses(pool_codes, passed_set, prereq_map, credits_earned):
+    """Filter a pool of course codes based on prerequisites and credits earned."""
+    eligible = []
+    for code in pool_codes:
+        if code in passed_set:
+            continue
+        
+        reqs = prereq_map.get(code, [])
+        met = True
+        for req in reqs:
+            if req == "_SENIOR_":
+                if credits_earned < 100:
+                    met = False
+                    break
+            elif req not in passed_set:
+                met = False
+                break
+        
+        if met:
+            # Special case for Labs: Prefer taking with theory or after
+            # However, for simplicity here, we just ensure theory is passed or we could allow same-sem
+            # Let's keep it simple: if theory is in passed_set, lab is eligible.
+            if code.endswith("L"):
+                theory = code[:-1]
+                if theory not in passed_set:
+                    # Allow same-semester theory+lab by not adding to eligible yet if theory not passed,
+                    # but we'll handle same-semester selection in the main loop.
+                    pass
+            eligible.append(code)
+    return eligible
+
+
 def generate_cse_student(profile, student_id):
-    """Generate a CSE student transcript based on profile."""
+    """Generate a CSE student transcript strictly following prerequisites."""
     rows = []
-
-    # Determine how many courses based on profile
-    all_required = (list(CSE_MAJOR_CORE.keys()) + list(CSE_CAPSTONE.keys()) +
-                    list(CSE_SEPS_CORE.keys()) + list(CSE_GED.keys()))
-
+    passed_courses = set()
+    credits_earned = 0
+    
+    # ── Simulation Parameters ──
+    # Determine progress based on profile
     if profile == "top_student":
-        course_fraction = 1.0
+        target_credits = 130
+        pref_load = 5  # courses/sem
     elif profile == "good_student":
-        course_fraction = random.uniform(0.75, 0.95)
+        target_credits = random.randint(100, 130)
+        pref_load = random.randint(4, 5)
     elif profile == "nearly_done":
-        course_fraction = random.uniform(0.90, 0.98)
+        target_credits = random.randint(115, 128)
+        pref_load = 4
     elif profile == "mid_stage":
-        course_fraction = random.uniform(0.40, 0.60)
+        target_credits = random.randint(50, 80)
+        pref_load = random.randint(3, 4)
     elif profile == "early_stage":
-        course_fraction = random.uniform(0.10, 0.30)
-    elif profile in ("struggling", "retake_heavy", "probation"):
-        course_fraction = random.uniform(0.30, 0.70)
-    elif profile == "withdrawn_heavy":
-        course_fraction = random.uniform(0.35, 0.65)
-    elif profile == "transfer_student":
-        course_fraction = random.uniform(0.50, 0.80)
+        target_credits = random.randint(12, 40)
+        pref_load = random.randint(3, 4)
     else:
-        course_fraction = random.uniform(0.30, 0.80)
+        target_credits = random.randint(30, 110)
+        pref_load = random.randint(2, 4)
 
-    n_courses = max(3, int(len(all_required) * course_fraction))
-    selected = random.sample(all_required, min(n_courses, len(all_required)))
+    # ── Waivers ──
+    # Simulating admission waivers (MAT112/116, ENG102)
+    # These count as "passed" for prerequisite purposes and need to be in the transcript
+    if random.random() < 0.6: 
+         passed_courses.add("MAT112")
+         rows.append(["MAT112", "College Algebra", "0", "T", SEMESTERS[0]])
+    if random.random() < 0.4: 
+         passed_courses.add("MAT116")
+         rows.append(["MAT116", "Pre-Calculus", "0", "T", SEMESTERS[0]])
+    if random.random() < 0.5: 
+         passed_courses.add("ENG102")
+         rows.append(["ENG102", "Introduction to Composition", "3", "T", SEMESTERS[0]])
 
-    # Assign semesters chronologically
-    n_semesters = random.randint(2, min(10, len(SEMESTERS)))
-    start = random.randint(0, len(SEMESTERS) - n_semesters)
-    avail_sems = SEMESTERS[start:start + n_semesters]
+    # ── Semester Loop ──
+    n_semesters = random.randint(2, len(SEMESTERS))
+    start_idx = random.randint(0, len(SEMESTERS) - n_semesters)
+    avail_sems = SEMESTERS[start_idx : start_idx + n_semesters]
+    
+    # Define pools
+    major_core = list(CSE_MAJOR_CORE.keys())
+    seps_core = list(CSE_SEPS_CORE.keys())
+    ged_req = list(CSE_GED.keys())
+    capstone = list(CSE_CAPSTONE.keys())
+    
+    for sem in avail_sems:
+        if credits_earned >= target_credits:
+            break
+            
+        # 1. Identify all eligible courses from all pools
+        all_eligible = []
+        all_eligible += get_eligible_courses(major_core, passed_courses, PREREQUISITES_CSE, credits_earned)
+        all_eligible += get_eligible_courses(seps_core, passed_courses, PREREQUISITES_CSE, credits_earned)
+        all_eligible += get_eligible_courses(ged_req, passed_courses, PREREQUISITES_CSE, credits_earned)
+        all_eligible += get_eligible_courses(capstone, passed_courses, PREREQUISITES_CSE, credits_earned)
+        
+        # Handle choice groups (one from each)
+        for choice_pool in [CSE_GED_CHOICE_1, CSE_GED_CHOICE_2, CSE_GED_CHOICE_3]:
+            if not any(c in passed_courses for c in choice_pool):
+                all_eligible += get_eligible_courses(list(choice_pool.keys()), passed_courses, PREREQUISITES_CSE, credits_earned)
 
-    for code in selected:
-        name, credits = ALL_COURSES[code]
-        grade = grade_for_profile(profile)
-        sem = random.choice(avail_sems)
-        rows.append([code, name, str(credits), grade, sem])
+        # 2. Add Electives if eligible
+        if credits_earned > 60:
+            all_eligible += get_eligible_courses(list(CSE_ELECTIVES_400.keys()), passed_courses, PREREQUISITES_CSE, credits_earned)
+            all_eligible += get_eligible_courses(list(OPEN_ELECTIVES.keys()), passed_courses, PREREQUISITES_CSE, credits_earned)
 
-        # Add retakes for struggling/retake_heavy/probation profiles
-        if profile in ("retake_heavy", "probation", "struggling") and grade in ("F", "D", "I"):
-            if random.random() < 0.6:
-                sem_idx = SEMESTERS.index(sem)
-                later = [s for s in SEMESTERS if SEMESTERS.index(s) > sem_idx]
-                if later:
-                    retry_grade = random.choices(
-                        ["C", "C+", "B", "B-", "D+", "D", "F"],
-                        weights=[20, 15, 10, 10, 15, 15, 15], k=1)[0]
-                    rows.append([code, name, str(credits), retry_grade, random.choice(later)])
+        if not all_eligible:
+            continue
+            
+        # 3. Select load for this semester
+        # Prioritize lower-level courses (shorter strings or specific prefixes usually)
+        # Or just random sample from eligible
+        current_load = min(len(all_eligible), pref_load + random.randint(-1, 1))
+        if current_load <= 0: continue
+        
+        # Sort eligible to prioritize "foundational" (e.g. MAT120 before CSE311)
+        # Simple heuristic: courses with more children in prereq map are higher priority
+        priority_map = {c: 0 for c in all_eligible}
+        for target, reqs in PREREQUISITES_CSE.items():
+            for r in reqs:
+                if r in priority_map: priority_map[r] += 1
+        
+        all_eligible.sort(key=lambda c: priority_map.get(c, 0), reverse=True)
+        # Take some top ones and some random ones
+        n_top = min(current_load, 2)
+        taking = all_eligible[:n_top]
+        if current_load > n_top:
+            taking += random.sample(all_eligible[n_top:], current_load - n_top)
 
-    # GED choice groups (3 groups)
-    c1 = random.choice(list(CSE_GED_CHOICE_1.keys()))
-    if random.random() < course_fraction:
-        name, cr = ALL_COURSES[c1]
-        rows.append([c1, name, str(cr), grade_for_profile(profile), random.choice(avail_sems)])
+        # 4. Process the selected courses
+        sem_passed = []
+        for code in taking:
+            name, credits = ALL_COURSES[code]
+            grade = grade_for_profile(profile)
+            rows.append([code, name, str(credits), grade, sem])
+            
+            if grade not in ("F", "W", "I"):
+                sem_passed.append(code)
+                credits_earned += credits
+                
+                # If theory passed, allow lab in next sem (already covered by get_eligible)
+                # If lab is in all_eligible and theory is also taken this sem, let's just allow it
+                if not code.endswith("L") and code + "L" in ALL_COURSES and code + "L" in all_eligible:
+                    if random.random() < 0.8: # Take lab with theory
+                         l_code = code + "L"
+                         l_name, l_credits = ALL_COURSES[l_code]
+                         l_grade = grade_for_profile(profile)
+                         rows.append([l_code, l_name, str(l_credits), l_grade, sem])
+                         if l_grade not in ("F", "W", "I"):
+                             sem_passed.append(l_code)
+                             credits_earned += l_credits
 
-    c2 = random.choice(list(CSE_GED_CHOICE_2.keys()))
-    if random.random() < course_fraction:
-        name, cr = ALL_COURSES[c2]
-        rows.append([c2, name, str(cr), grade_for_profile(profile), random.choice(avail_sems)])
-
-    c3 = random.choice(list(CSE_GED_CHOICE_3.keys()))
-    if random.random() < course_fraction:
-        name, cr = ALL_COURSES[c3]
-        rows.append([c3, name, str(cr), grade_for_profile(profile), random.choice(avail_sems)])
-
-    # NOTE: ENG102 and MAT116 are waiverable — handled via user input, not in transcript
-
-    # Electives for top/good/nearly_done students
-    if profile in ("top_student", "good_student", "nearly_done"):
-        elecs = random.sample(list(CSE_ELECTIVES_400.keys()), min(3, len(CSE_ELECTIVES_400)))
-        for e in elecs:
-            name, cr = ALL_COURSES[e]
-            rows.append([e, name, str(cr), grade_for_profile(profile), random.choice(avail_sems)])
-
-        opens = random.sample(list(OPEN_ELECTIVES.keys()), min(1, len(OPEN_ELECTIVES)))
-        for o in opens:
-            name, cr = ALL_COURSES[o]
-            rows.append([o, name, str(cr), grade_for_profile(profile), random.choice(avail_sems)])
+        passed_courses.update(sem_passed)
 
     return sort_rows(rows)
 
 
 def generate_bba_student(profile, student_id, concentration=None):
-    """Generate a BBA student transcript based on profile and concentration."""
+    """Generate a BBA student transcript strictly following prerequisites."""
     rows = []
     if concentration is None:
         concentration = random.choice(BBA_CONC_NAMES)
-
-    all_required = list(BBA_SCHOOL_CORE.keys()) + list(BBA_CORE.keys()) + list(BBA_GED.keys())
-
+        
+    passed_courses = set()
+    credits_earned = 0
+    
+    # ── Simulation Parameters ──
     if profile == "top_student":
-        course_fraction = 1.0
+        target_credits = 130
+        pref_load = 5
     elif profile == "good_student":
-        course_fraction = random.uniform(0.75, 0.95)
+        target_credits = random.randint(100, 130)
+        pref_load = random.randint(4, 5)
     elif profile == "nearly_done":
-        course_fraction = random.uniform(0.90, 0.98)
+        target_credits = random.randint(115, 128)
+        pref_load = 4
     elif profile == "mid_stage":
-        course_fraction = random.uniform(0.40, 0.60)
+        target_credits = random.randint(50, 80)
+        pref_load = random.randint(3, 4)
     elif profile == "early_stage":
-        course_fraction = random.uniform(0.10, 0.30)
-    elif profile in ("struggling", "retake_heavy", "probation"):
-        course_fraction = random.uniform(0.30, 0.70)
+        target_credits = random.randint(12, 40)
+        pref_load = random.randint(3, 4)
     else:
-        course_fraction = random.uniform(0.30, 0.80)
+        target_credits = random.randint(30, 110)
+        pref_load = random.randint(2, 4)
 
-    n_courses = max(3, int(len(all_required) * course_fraction))
-    selected = random.sample(all_required, min(n_courses, len(all_required)))
+    # ── Waivers ──
+    if random.random() < 0.5: 
+        passed_courses.add("BUS112")
+        rows.append(["BUS112", "Intro to Business Mathematics", "3", "T", SEMESTERS[0]])
+    if random.random() < 0.5: 
+        passed_courses.add("ENG102")
+        rows.append(["ENG102", "Introduction to Composition", "3", "T", SEMESTERS[0]])
 
-    n_semesters = random.randint(2, min(10, len(SEMESTERS)))
-    start = random.randint(0, len(SEMESTERS) - n_semesters)
-    avail_sems = SEMESTERS[start:start + n_semesters]
-
-    for code in selected:
-        name, credits = ALL_COURSES[code]
-        grade = grade_for_profile(profile)
-        sem = random.choice(avail_sems)
-        rows.append([code, name, str(credits), grade, sem])
-
-        if profile in ("retake_heavy", "probation", "struggling") and grade in ("F", "D", "I"):
-            if random.random() < 0.6:
-                sem_idx = SEMESTERS.index(sem)
-                later = [s for s in SEMESTERS if SEMESTERS.index(s) > sem_idx]
-                if later:
-                    retry_grade = random.choices(
-                        ["C", "C+", "B", "D+", "D", "F"],
-                        weights=[20, 15, 15, 15, 15, 20], k=1)[0]
-                    rows.append([code, name, str(credits), retry_grade, random.choice(later)])
-
-    # GED Choice: Language (BEN205/ENG115/CHN101 — pick 1)
-    lang = random.choice(list(BBA_GED_CHOICE_LANG.keys()))
-    if random.random() < course_fraction:
-        name, cr = ALL_COURSES[lang]
-        rows.append([lang, name, str(cr), grade_for_profile(profile), random.choice(avail_sems)])
-
-    # GED Choice: History (pick 2)
-    his_choices = random.sample(list(BBA_GED_CHOICE_HIS.keys()), 2)
-    for h in his_choices:
-        if random.random() < course_fraction:
-            name, cr = ALL_COURSES[h]
-            rows.append([h, name, str(cr), grade_for_profile(profile), random.choice(avail_sems)])
-
-    # GED Choice: Political Science (pick 1)
-    pol = random.choice(list(BBA_GED_CHOICE_POL.keys()))
-    if random.random() < course_fraction:
-        name, cr = ALL_COURSES[pol]
-        rows.append([pol, name, str(cr), grade_for_profile(profile), random.choice(avail_sems)])
-
-    # GED Choice: Social Science (pick 1)
-    soc = random.choice(list(BBA_GED_CHOICE_SOC.keys()))
-    if random.random() < course_fraction:
-        name, cr = ALL_COURSES[soc]
-        rows.append([soc, name, str(cr), grade_for_profile(profile), random.choice(avail_sems)])
-
-    # GED Choice: Science (pick 3)
-    sci_choices = random.sample(list(BBA_GED_CHOICE_SCI.keys()), 3)
-    for s in sci_choices:
-        if random.random() < course_fraction:
-            name, cr = ALL_COURSES[s]
-            rows.append([s, name, str(cr), grade_for_profile(profile), random.choice(avail_sems)])
-
-    # GED Choice: Lab (pick 1 matching lab)
-    # Pick a lab matching one of the science courses taken
-    available_labs = [code + "L" for code in sci_choices if code + "L" in ALL_COURSES]
-    if available_labs and random.random() < course_fraction:
-        lab = random.choice(available_labs)
-        name, cr = ALL_COURSES[lab]
-        rows.append([lab, name, str(cr), grade_for_profile(profile), random.choice(avail_sems)])
-
-    # NOTE: ENG102 and BUS112 are waiverable — handled via user input, not in transcript
-
-    # ── Concentration courses ──
+    # ── Semester Loop ──
+    n_semesters = random.randint(2, len(SEMESTERS))
+    start_idx = random.randint(0, len(SEMESTERS) - n_semesters)
+    avail_sems = SEMESTERS[start_idx : start_idx + n_semesters]
+    
+    # Pools
+    school_core = list(BBA_SCHOOL_CORE.keys())
+    bba_core = list(BBA_CORE.keys())
+    ged_req = list(BBA_GED.keys())
     conc_data = BBA_CONC_COURSES[concentration]
-    conc_req_codes = list(conc_data["required"].keys())
-    conc_elec_codes = list(conc_data["elective"].keys())
+    conc_req = list(conc_data["required"].keys())
+    conc_elec = list(conc_data["elective"].keys())
+    
+    for sem in avail_sems:
+        if credits_earned >= target_credits:
+            break
+            
+        all_eligible = []
+        all_eligible += get_eligible_courses(school_core, passed_courses, PREREQUISITES_BBA, credits_earned)
+        all_eligible += get_eligible_courses(bba_core, passed_courses, PREREQUISITES_BBA, credits_earned)
+        all_eligible += get_eligible_courses(ged_req, passed_courses, PREREQUISITES_BBA, credits_earned)
+        
+        # GED Choices
+        for choice_pool in [BBA_GED_CHOICE_LANG, BBA_GED_CHOICE_POL, BBA_GED_CHOICE_SOC, BBA_GED_CHOICE_SCI]:
+             if not any(c in passed_courses for c in choice_pool):
+                 all_eligible += get_eligible_courses(list(choice_pool.keys()), passed_courses, PREREQUISITES_BBA, credits_earned)
+        
+        # History needs 2
+        his_passed = [c for c in BBA_GED_CHOICE_HIS if c in passed_courses]
+        if len(his_passed) < 2:
+             all_eligible += get_eligible_courses(list(BBA_GED_CHOICE_HIS.keys()), passed_courses, PREREQUISITES_BBA, credits_earned)
 
-    # Required concentration courses (based on profile)
-    if profile in ("top_student", "nearly_done"):
-        n_conc_req = 4  # all required
-    elif profile in ("good_student",):
-        n_conc_req = random.randint(3, 4)
-    elif profile in ("mid_stage",):
-        n_conc_req = random.randint(1, 3)
-    elif profile in ("early_stage",):
-        n_conc_req = random.randint(0, 1)
-    else:
-        n_conc_req = random.randint(1, 4)
+        # Concentration
+        if credits_earned >= 30: # Realistic threshold to start major
+            all_eligible += get_eligible_courses(conc_req, passed_courses, PREREQUISITES_BBA, credits_earned)
+            all_eligible += get_eligible_courses(conc_elec, passed_courses, PREREQUISITES_BBA, credits_earned)
 
-    for code in conc_req_codes[:n_conc_req]:
-        name, credits = ALL_COURSES[code]
-        grade = grade_for_profile(profile)
-        sem = random.choice(avail_sems)
-        rows.append([code, name, str(credits), grade, sem])
+        if not all_eligible:
+            continue
 
-    # Elective concentration courses (need 2)
-    if profile in ("top_student", "nearly_done"):
-        n_conc_elec = 2
-    elif profile in ("good_student",):
-        n_conc_elec = random.randint(1, 2)
-    elif profile in ("mid_stage",):
-        n_conc_elec = random.randint(0, 1)
-    else:
-        n_conc_elec = random.randint(0, 2)
+        current_load = min(len(all_eligible), pref_load + random.randint(-1, 1))
+        if current_load <= 0: continue
+        
+        # Prioritize foundational
+        priority_map = {c: 0 for c in all_eligible}
+        for target, reqs in PREREQUISITES_BBA.items():
+            for r in reqs:
+                if r in priority_map: priority_map[r] += 1
+        
+        all_eligible.sort(key=lambda c: priority_map.get(c, 0), reverse=True)
+        taking = random.sample(all_eligible[:min(len(all_eligible), current_load+2)], current_load)
 
-    chosen_elecs = random.sample(conc_elec_codes, min(n_conc_elec, len(conc_elec_codes)))
-    for code in chosen_elecs:
-        name, credits = ALL_COURSES[code]
-        grade = grade_for_profile(profile)
-        sem = random.choice(avail_sems)
-        rows.append([code, name, str(credits), grade, sem])
+        sem_passed = []
+        for code in taking:
+            name, credits = ALL_COURSES[code]
+            grade = grade_for_profile(profile)
+            rows.append([code, name, str(credits), grade, sem])
+            if grade not in ("F", "W", "I"):
+                sem_passed.append(code)
+                credits_earned += credits
+                
+                # Matching Lab
+                if code in BBA_GED_CHOICE_SCI and code + "L" in ALL_COURSES:
+                    if random.random() < 0.7:
+                        l_code = code + "L"
+                        l_name, l_credits = ALL_COURSES[l_code]
+                        l_grade = grade_for_profile(profile)
+                        rows.append([l_code, l_name, str(l_credits), l_grade, sem])
+                        if l_grade not in ("F", "W", "I"):
+                            sem_passed.append(l_code)
+                            credits_earned += l_credits
 
-    # Internship for advanced students
-    if profile in ("top_student", "good_student", "nearly_done"):
+        passed_courses.update(sem_passed)
+
+    # Internship
+    if credits_earned >= 100 and profile in ("top_student", "good_student", "nearly_done"):
         rows.append(["BUS498", "Internship", "4", grade_for_profile(profile), avail_sems[-1]])
 
     return sort_rows(rows), concentration
 
 
 def generate_dept_change_student(student_id, current_program, previous_program):
-    """Generate a student who switched from previous_program to current_program."""
+    """Generate a student who switched from previous_program to current_program, following prerequisites."""
     rows = []
+    passed_courses = set()
+    credits_earned = 0
     concentration = None
     
     # Selection of semesters
-    n_semesters = random.randint(6, 12)
-    start = random.randint(0, len(SEMESTERS) - n_semesters)
-    avail_sems = SEMESTERS[start:start + n_semesters]
+    n_semesters = random.randint(8, 12)
+    start_idx = random.randint(0, len(SEMESTERS) - n_semesters)
+    avail_sems = SEMESTERS[start_idx : start_idx + n_semesters]
     
-    # Split semesters: roughly first 1/3 in old major, rest in new
-    switch_point = max(1, n_semesters // 3)
-    old_sems = avail_sems[:switch_point]
-    new_sems = avail_sems[switch_point:]
+    # Split: first 3-4 semesters in old program, rest in new
+    switch_sem_idx = random.randint(3, 4)
     
-    # 1. Courses from OLD major (will become electives)
+    # Pools
     if previous_program == "CSE":
-        old_pool = list(CSE_MAJOR_CORE.keys())
+        old_pool = list(CSE_SEPS_CORE.keys()) + list(CSE_MAJOR_CORE.keys()) + list(CSE_GED.keys())
+        old_prereqs = PREREQUISITES_CSE
     else:
-        old_pool = list(BBA_SCHOOL_CORE.keys()) + list(BBA_CORE.keys())
-    
-    n_old = random.randint(6, 10)
-    old_selected = random.sample(old_pool, min(n_old, len(old_pool)))
-    for code in old_selected:
-        name, cr = ALL_COURSES[code]
-        # Use "struggling" or "good_student" profiles for old major grades
-        grade = grade_for_profile(random.choice(["good_student", "struggling"]))
-        rows.append([code, name, str(cr), grade, random.choice(old_sems)])
-
-    # 2. Courses from NEW major (current)
+        old_pool = list(BBA_SCHOOL_CORE.keys()) + list(BBA_CORE.keys()) + list(BBA_GED.keys())
+        old_prereqs = PREREQUISITES_BBA
+        
     if current_program == "CSE":
-        new_rows = generate_cse_student("mid_stage", student_id)
+        new_pool = list(CSE_SEPS_CORE.keys()) + list(CSE_MAJOR_CORE.keys()) + list(CSE_GED.keys()) + list(CSE_CAPSTONE.keys())
+        new_prereqs = PREREQUISITES_CSE
     else:
-        new_rows, concentration = generate_bba_student("mid_stage", student_id)
-    
-    # Filter out duplicates and force new semesters
-    seen = {r[0] for r in rows}
-    for r in new_rows:
-        if r[0] not in seen:
-            r[4] = random.choice(new_sems)
-            rows.append(r)
-            seen.add(r[0])
+        concentration = random.choice(BBA_CONC_NAMES)
+        new_pool = list(BBA_SCHOOL_CORE.keys()) + list(BBA_CORE.keys()) + list(BBA_GED.keys())
+        conc_data = BBA_CONC_COURSES[concentration]
+        new_pool += list(conc_data["required"].keys()) + list(conc_data["elective"].keys())
+        new_prereqs = PREREQUISITES_BBA
+
+    # Loop through semesters
+    for i, sem in enumerate(avail_sems):
+        is_old = i < switch_sem_idx
+        pool = old_pool if is_old else new_pool
+        p_map = old_prereqs if is_old else new_prereqs
+        
+        # Determine eligible
+        eligible = get_eligible_courses(pool, passed_courses, p_map, credits_earned)
+        if not eligible: continue
+        
+        # Load
+        load = random.randint(3, 5)
+        taking = random.sample(eligible, min(len(eligible), load))
+        
+        sem_passed = []
+        for code in taking:
+            name, credits = ALL_COURSES[code]
+            grade = grade_for_profile("good_student" if is_old else "mid_stage")
+            rows.append([code, name, str(credits), grade, sem])
+            if grade not in ("F", "W", "I"):
+                sem_passed.append(code)
+                credits_earned += credits
+                
+                # Lab logic
+                if code + "L" in ALL_COURSES and code + "L" in eligible:
+                    l_code = code + "L"
+                    l_name, l_credits = ALL_COURSES[l_code]
+                    rows.append([l_code, l_name, str(l_credits), grade_for_profile("good_student"), sem])
+                    sem_passed.append(l_code)
+                    credits_earned += l_credits
+
+        passed_courses.update(sem_passed)
             
     return sort_rows(rows), concentration
 

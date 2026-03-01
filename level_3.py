@@ -115,11 +115,20 @@ def print_level3_report(filepath, program, records, credits_attempted, credits_e
 
     # Eligibility
     if eligible:
-        print(f"\n  {color('★ GRADUATION ELIGIBLE ★', GREEN)}")
+        print(f"  Graduation Eligible: {color('YES', GREEN)}")
     else:
-        print(f"\n  {color('✗ NOT ELIGIBLE FOR GRADUATION', RED)}")
+        print(f"  Graduation Eligible: {color('NO', RED)}")
         for r in reasons:
-            print(f"    {color('✗', RED)} {r}")
+            print(f"    {color('X', RED)} {r}")
+
+    # ── Prerequisites ──
+    violations = audit_result.get("prereq_violations", [])
+    if violations:
+        print(section_bar("PREREQUISITE VIOLATIONS"))
+        print(f"  {color('CAUTION:', RED)} Found {len(violations)} violation(s):\n")
+        for v in violations:
+            print(f"    {color('!', RED)} {v['course']} (taken in {v['semester']})")
+            print(f"       Missing: {color(', '.join(v['missing']), YELLOW)}")
 
     print("=" * 50)
 

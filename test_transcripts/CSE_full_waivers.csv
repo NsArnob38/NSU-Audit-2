@@ -1,8 +1,8 @@
 course_code,course_name,credits,grade,semester
-MAT116,Pre-Calculus,3,A,Fall2022
-CSE115,Programming Language I,3,A,Fall2022
-CSE115L,Programming Language I Lab,1,A,Fall2022
-ENG103,Intermediate Composition,3,B+,Spring2023
-MAT120,Calculus I,3,B,Spring2023
-PHY107,Physics I,3,A-,Spring2023
-PHY107L,Physics I Lab,1,A,Spring2023
+ACT201,Intro to Financial Accounting,3,A-,Spring2019
+BIO103,Biology I,3,B,Summer2019
+BIO103L,Biology I Lab,1,A,Summer2019
+CEE110,Engineering Drawing,1,B,Summer2019
+CHE101,Chemistry I,3,A,Summer2019
+CHE101L,Chemistry I Lab,1,C+,Fall2019
+CSE101,Introduction to Python Programming,3,A-,Fall2019
