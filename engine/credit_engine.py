@@ -7,6 +7,7 @@ and assigns status labels to each course attempt.
 import csv
 import re
 from collections import defaultdict
+from engine.course_db import ALL_COURSES, LEGACY_COURSE_MAP
 
 # ─── Academic Timeline ──────────────────────────────────
 SEMESTERS = [
@@ -32,11 +33,66 @@ class CourseRecord:
     """Represents a single course attempt from the transcript."""
 
     def __init__(self, course_code, course_name, credits, grade, semester):
-        self.course_code = course_code.strip()
+        # 1. String Sanitization
+        raw_code = course_code.strip().upper()
+        # Remove all spaces from course code (e.g., 'CSE 215 ' -> 'CSE215')
+        self.course_code = re.sub(r'\s+', '', raw_code)
+        
+        # 2. Alias Mapping (Curriculum Traps)
+        # Handle exact match legacy codes (like MGT210 -> MGT212)
+        if self.course_code in LEGACY_COURSE_MAP:
+            self.course_code = LEGACY_COURSE_MAP[self.course_code]
+        else:
+            # Handle dynamic prefix changes (e.g., CSC225 -> CSE225)
+            # CSE Department Legacy
+            self.course_code = re.sub(r'^CSC(\d+[A-Z]*)$', r'CSE\1', self.course_code)
+            self.course_code = re.sub(r'^ICE(\d+[A-Z]*)$', r'ETE\1', self.course_code)
+            self.course_code = re.sub(r'^CEN(\d+[A-Z]*)$', r'CEE\1', self.course_code)
+            # BBA & Economics Legacy
+            self.course_code = re.sub(r'^ECN(\d+[A-Z]*)$', r'ECO\1', self.course_code)
+            self.course_code = re.sub(r'^MSC(\d+[A-Z]*)$', r'MAT\1', self.course_code)
+            self.course_code = re.sub(r'^ACN(\d+[A-Z]*)$', r'ACT\1', self.course_code)
+            # Non-Major Legacy
+            self.course_code = re.sub(r'^DEV(\d+[A-Z]*)$', r'ECO\1', self.course_code) # Could also be SOC, mapping to ECO is safer for BBA
+            self.course_code = re.sub(r'^HEA(\d+[A-Z]*)$', r'PBH\1', self.course_code)
+            
+            # Note regarding MGT->BUS and MIS->BUS112: These are context-dependent and better fully managed 
+            # if we see specific failures. We'll map the exact ones in LEGACY_COURSE_MAP if needed.
+
         self.course_name = course_name.strip()
-        self.credits = int(float(credits.strip()))
-        self.grade = grade.strip()
-        self.semester = semester.strip()
+        
+        # 3. Format Semester Strings
+        # Ensure format like 'Spring2020', gracefully handle 'Spr 20', 'Fall-2021', 'Summer 22'
+        raw_sem = semester.strip()
+        sem_match = re.match(r'(Spring|Summer|Fall|Spr|Sum|Fal)[\s\'-]*(\d{2,4})', raw_sem, re.IGNORECASE)
+        if sem_match:
+            term = sem_match.group(1).capitalize()
+            # Expand 'Spr' -> 'Spring', 'Sum' -> 'Summer', 'Fal' -> 'Fall'
+            if term == 'Spr': term = 'Spring'
+            elif term == 'Sum': term = 'Summer'
+            elif term == 'Fal': term = 'Fall'
+            
+            year_str = sem_match.group(2)
+            if len(year_str) == 2:
+                year_str = "20" + year_str # assume 20xx
+            self.semester = f"{term}{year_str}"
+        else:
+            self.semester = raw_sem # Keep raw if it completely fails regex
+
+        # 4. Credit Mismatches
+        parsed_credits = int(float(credits.strip()))
+        if self.course_code in ALL_COURSES:
+            expected_credits = ALL_COURSES[self.course_code][1]
+            if parsed_credits != expected_credits:
+                # Discrepancy detected (e.g. CSE115 as 4 credits). 
+                # We enforce the correct curriculum map credits.
+                self.credits = expected_credits
+            else:
+                self.credits = parsed_credits
+        else:
+            self.credits = parsed_credits
+
+        self.grade = grade.strip().upper()
         self.status = ""  # Will be set by the engine
 
     def is_passing(self):
@@ -52,7 +108,7 @@ class CourseRecord:
         return self.grade == "I"
 
     def __repr__(self):
-        return f"<{self.course_code} | {self.grade} | {self.semester} | {self.status}>"
+        return f"<{self.course_code} | {self.grade} | {self.semester} | {self.credits}cr | {self.status}>"
 
 
 def parse_transcript(filepath):
@@ -89,20 +145,58 @@ def resolve_retakes(records):
     and assign status labels to every record.
 
     Status values:
-      BEST           — the attempt that counts for credit/GPA
-      RETAKE-IGNORED — a retake attempt superseded by a better grade
-      WAIVED         — grade is T (transfer/waived)
-      WITHDRAWN      — grade is W
-      FAILED         — grade is F or I and no better attempt exists
+      BEST                — the attempt that counts for credit/GPA
+      RETAKE-IGNORED      — a retake attempt superseded by a better grade
+      UNAUTHORIZED-RETAKE — retaking a course already passed with >= B-
+      WAIVED              — grade is T (transfer/waived)
+      WITHDRAWN           — grade is W
+      FAILED              — grade is F or I and no better attempt exists
+      REJECTED-TRANSFER   — T grade on a non-transferable core course
     """
-    # Group by course_code preserving order
     groups = defaultdict(list)
     for r in records:
         groups[r.course_code].append(r)
 
+    sem_map = {sem: i for i, sem in enumerate(SEMESTERS)}
+    CURRENT_SEMESTER_INDEX = len(SEMESTERS) # E.g., assume current is right after Fall2024
+    CAPSTONES = {"CSE499A", "CSE499B", "BUS498"}
+
     for code, attempts in groups.items():
-        if len(attempts) == 1:
-            rec = attempts[0]
+        # First, sort chronologically to process sequential policies
+        attempts.sort(key=lambda a: sem_map.get(a.semester, -1))
+        
+        passed_with_b_minus = False
+
+        for rec in attempts:
+            # 1. Incomplete Timer Expired
+            if rec.grade == "I":
+                sem_idx = sem_map.get(rec.semester, CURRENT_SEMESTER_INDEX)
+                # If older than 1 semester, convert I to F
+                if CURRENT_SEMESTER_INDEX - sem_idx > 1:
+                    rec.grade = "F"
+
+            # 2. Transfer Constraints (No T grades for Capstones)
+            if rec.grade == "T" and code in CAPSTONES:
+                rec.status = "REJECTED-TRANSFER"
+                rec.grade = "F" # Void the credit
+                continue
+
+            # 3. B- Retake Threshold
+            if passed_with_b_minus:
+                rec.status = "UNAUTHORIZED-RETAKE"
+                continue
+
+            if rec.grade in PASSING_GRADES and _grade_rank(rec.grade) >= _grade_rank("B-"):
+                passed_with_b_minus = True
+
+        # Now isolate the attempts that are valid to be considered for "BEST"
+        valid_attempts = [r for r in attempts if r.status not in ("UNAUTHORIZED-RETAKE", "REJECTED-TRANSFER")]
+
+        if not valid_attempts:
+            continue
+
+        if len(valid_attempts) == 1:
+            rec = valid_attempts[0]
             if rec.is_withdrawn():
                 rec.status = "WITHDRAWN"
             elif rec.is_transfer():
@@ -114,9 +208,9 @@ def resolve_retakes(records):
             else:
                 rec.status = "BEST"
         else:
-            # Multiple attempts — find the best grade
-            best = max(attempts, key=lambda r: _grade_rank(r.grade))
-            for rec in attempts:
+            # Multiple valid attempts — find the best grade
+            best = max(valid_attempts, key=lambda r: _grade_rank(r.grade))
+            for rec in valid_attempts:
                 if rec is best:
                     if rec.is_withdrawn():
                         rec.status = "WITHDRAWN"

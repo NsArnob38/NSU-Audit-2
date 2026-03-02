@@ -34,5 +34,5 @@ PREREQUISITES_BBA = {
     "MGT351": ["MGT212"],
     "MGT314": ["MGT212"],
     "MGT368": ["MGT212"],
-    "MGT489": ["Senior Status (100+ Credits)", "FIN254", "MKT202", "MGT212"],
+    "MGT489": ["_SENIOR_", "FIN254", "MKT202", "MGT212"],
 }

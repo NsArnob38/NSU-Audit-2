@@ -259,6 +259,18 @@ Examples:
     # Level 1: Credit tallying
     records, credits_attempted, credits_earned = process_transcript(args.transcript)
 
+    from engine.course_db import ALL_COURSES
+    unrecognized = set(r.course_code for r in records if r.course_code not in ALL_COURSES and r.grade not in ("W", "I"))
+    if unrecognized:
+        print(header_bar(f"LEVEL 3 — AUDIT REPORT ({program})"))
+        print(f"  Transcript File  : {os.path.basename(args.transcript)}")
+        print(f"\n  {color('!!! FAKE TRANSCRIPT DETECTED !!!', RED)}")
+        print(f"  Unrecognized Course Codes: {color(', '.join(unrecognized), RED)}")
+        print(f"  This transcript contains courses that do not exist in the NSU database.")
+        print(f"  {color('AUDIT ABORTED', RED)}")
+        print(f"  {'-' * 46}\n")
+        sys.exit(1)
+
     # Level 2: CGPA calculation (auto-detects waivers from transcript)
     cgpa_data = process_cgpa(records, program)
 

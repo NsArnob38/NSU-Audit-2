@@ -20,6 +20,7 @@ except Exception:
 from engine.credit_engine import process_transcript
 from engine.cgpa_engine import process_cgpa
 from engine.audit_engine import run_audit, build_graduation_roadmap
+from engine.course_db import ALL_COURSES
 
 # ─── Color helpers (graceful fallback) ───────────────────
 try:
@@ -79,11 +80,9 @@ def status_color(status):
     """Colorize a status string."""
     if status == "BEST":
         return color(status, GREEN)
-    elif status in ("FAILED",):
+    elif status in ("FAILED", "REJECTED-TRANSFER"):
         return color(status, RED)
-    elif status == "WITHDRAWN":
-        return color(status, YELLOW)
-    elif status == "RETAKE-IGNORED":
+    elif status in ("WITHDRAWN", "RETAKE-IGNORED", "UNAUTHORIZED-RETAKE"):
         return color(status, YELLOW)
     elif status == "WAIVED":
         return color(status, CYAN)
@@ -116,7 +115,7 @@ def print_normal_report(filepath, program, records, credits_attempted, credits_e
     standing = cgpa_data["standing"]
     eligible = audit_result["eligible"]
     reasons = audit_result["reasons"]
-
+    
     print(header_bar(f"NSU AUDIT REPORT - {program.upper()}"))
     print(f"  Student Transcript : {os.path.basename(filepath)}")
     print(f"  Credits Attempted  : {credits_attempted}")
@@ -328,6 +327,18 @@ Examples:
 
     # Level 1: Credit tallying
     records, credits_attempted, credits_earned = process_transcript(args.transcript)
+
+    from engine.course_db import ALL_COURSES
+    unrecognized = set(r.course_code for r in records if r.course_code not in ALL_COURSES and r.grade not in ("W", "I"))
+    if unrecognized:
+        print(header_bar(f"NSU AUDIT REPORT - {program}"))
+        print(f"  Student Transcript : {os.path.basename(args.transcript)}")
+        print(f"\n  {color('!!! FAKE TRANSCRIPT DETECTED !!!', RED)}")
+        print(f"  Unrecognized Course Codes: {color(', '.join(unrecognized), RED)}")
+        print(f"  This transcript contains courses that do not exist in the NSU database.")
+        print(f"  {color('AUDIT ABORTED', RED)}")
+        print(f"  {'-' * 46}\n")
+        sys.exit(1)
 
     # Level 2: CGPA calculation
     cgpa_data = process_cgpa(records, program)

@@ -243,6 +243,7 @@ VALID_CONCENTRATIONS = set(BBA_CONCENTRATIONS.keys())
 # ─────────────────────────────────────────────────────
 
 from engine.prerequisites import PREREQUISITES_CSE, PREREQUISITES_BBA
+import collections
 
 
 def check_prerequisite_violations(program, records, waivers):
@@ -250,9 +251,13 @@ def check_prerequisite_violations(program, records, waivers):
     Check if any courses in records were taken before their prerequisites were passed.
     Returns a list of dicts: {"course": code, "missing": [missing_prereqs]}
     """
-    # Prerequisites MUST be checked chronologically
+    # Group records by semester and sort semesters chronologically
     sem_map = {sem: i for i, sem in enumerate(SEMESTERS)}
-    chrono_records = sorted(records, key=lambda r: sem_map.get(r.semester, -1))
+    records_by_sem = collections.defaultdict(list)
+    for r in records:
+        records_by_sem[r.semester].append(r)
+        
+    sorted_sems = sorted(records_by_sem.keys(), key=lambda s: sem_map.get(s, 9999))
     
     prereq_map = PREREQUISITES_CSE if program.upper() == "CSE" else PREREQUISITES_BBA
     passed_so_far = set(k for k, v in waivers.items() if v)  # Only true waivers count
@@ -260,31 +265,45 @@ def check_prerequisite_violations(program, records, waivers):
     
     # Track credits earned at each step for senior status check
     credits_at_step = 0
+    first_sem = sorted_sems[0] if sorted_sems else None
     
-    for r in chrono_records:
-        code = r.course_code
-        if code in prereq_map:
-            required = prereq_map[code]
-            missing = []
-            for req in required:
-                if req == "_SENIOR_":
-                    if credits_at_step < 100:
-                        missing.append("Senior Status (100+ Credits)")
-                elif req not in passed_so_far:
-                    missing.append(req)
-            
-            if missing:
-                violations.append({
-                    "course": code,
-                    "semester": r.semester,
-                    "missing": missing
-                })
+    for current_sem in sorted_sems:
+        sem_records = records_by_sem[current_sem]
         
-        # If passed (not F/W/I), add to passed_so_far
-        if r.grade not in ("F", "W", "I"):
-            passed_so_far.add(code)
-            # Add to credits for senior status check
-            credits_at_step += r.credits
+        # FIRST SEMESTER EXCEPTION: Allow concurrent enrollment of prerequisites.
+        # We add passed courses to the pool BEFORE checking them.
+        if current_sem == first_sem:
+            for r in sem_records:
+                if r.grade not in ("F", "W", "I"):
+                    passed_so_far.add(r.course_code)
+                    credits_at_step += r.credits
+                    
+        # Verify prereqs for this semester's courses
+        for r in sem_records:
+            code = r.course_code
+            if code in prereq_map:
+                required = prereq_map[code]
+                missing = []
+                for req in required:
+                    if req == "_SENIOR_":
+                        if credits_at_step < 100:
+                            missing.append("Senior Status (100+ Credits)")
+                    elif req not in passed_so_far:
+                        missing.append(req)
+                
+                if missing:
+                    violations.append({
+                        "course": code,
+                        "semester": current_sem,
+                        "missing": missing
+                    })
+        
+        # NORMAL SEMESTERS: Add passed courses to the pool AFTER checking prereqs
+        if current_sem != first_sem:
+            for r in sem_records:
+                if r.grade not in ("F", "W", "I"):
+                    passed_so_far.add(r.course_code)
+                    credits_at_step += r.credits
             
     return violations
 
@@ -332,10 +351,8 @@ def audit_cse(records, waivers, credits_earned, cgpa, credit_reduction=0):
     if missing_cap:
         remaining["Capstone"] = missing_cap
 
-    # SEPS Core (38cr) — remove waived MAT116
+    # SEPS Core (41cr)
     seps_to_check = dict(CSE_SEPS_CORE)
-    if waivers.get("MAT116", False):
-        seps_to_check.pop("MAT116", None)
     missing_seps = _find_missing(seps_to_check, passed)
     if missing_seps:
         remaining["SEPS Core"] = missing_seps
@@ -358,7 +375,7 @@ def audit_cse(records, waivers, credits_earned, cgpa, credit_reduction=0):
     if missing_c3:
         remaining["GED Choice (SOC101/ANT101/ENV203/GEO205)"] = missing_c3
 
-    # Waivable courses (ENG102, MAT116)
+    # Waivable courses (ENG102, MAT112)
     waivable_remaining = {}
     for course, cr in CSE_GED_WAIVABLE.items():
         if not waivers.get(course, False) and course not in passed:

@@ -94,59 +94,106 @@ def print_level2_report(filepath, program, records, credits_attempted, credits_e
     else:
         print(f"  Academic Standing         : {color('NORMAL', GREEN)}")
 
-    # GPA per course (only BEST status, credit-bearing, non-T)
-    print(section_bar("GPA COURSE DETAIL"))
-    headers = ["Code", "Course Name", "Cr", "Grade", "GP", "QP"]
-    raw_rows = []
-    colored_rows = []
-    total_qp = 0.0
-    total_gc = 0
+    # Semester-by-semester breakdown (replacing the flat list)
+    print(section_bar("SEMESTER-BY-SEMESTER PROGRESSION"))
+    from engine.credit_engine import SEMESTERS, resolve_retakes
+    from engine.cgpa_engine import compute_cgpa
+    import copy
 
-    for r in records:
-        if r.status == "BEST" and r.credits > 0 and r.grade not in ("W", "T"):
+    sem_map = {sem: i for i, sem in enumerate(SEMESTERS)}
+    transcript_sems = sorted(
+        list(set(r.semester for r in records if r.semester in sem_map)), 
+        key=lambda s: sem_map[s]
+    )
+
+    consecutive_p = 0
+    dismissed = False
+
+    for current_sem in transcript_sems:
+        if dismissed:
+            break
+
+        # Get records up to and including strictly this semester ONLY
+        cutoff_idx = sem_map[current_sem]
+        subset = [copy.copy(r) for r in records if r.semester in sem_map and sem_map[r.semester] <= cutoff_idx]
+        
+        # Calculate standing and cumulative CGPA specifically for this snapshot
+        resolved_subset = resolve_retakes(subset)
+        snap_cgpa, _, snap_credits = compute_cgpa(resolved_subset)
+        
+        if snap_cgpa < 2.0:
+            consecutive_p += 1
+            if consecutive_p == 1:
+                snap_standing = color("PROBATION (P1)", YELLOW)
+            elif consecutive_p == 2:
+                snap_standing = color("PROBATION (P2)", RED)
+            else:
+                snap_standing = color("DISMISSAL", RED)
+                dismissed = True
+        else:
+            consecutive_p = 0
+            snap_standing = color("NORMAL", GREEN)
+
+        print(header_bar(f"SEMESTER: {current_sem}", width=60))
+        
+        # Determine courses specifically taken THIS semester
+        sem_records = [r for r in records if r.semester == current_sem]
+        
+        headers = ["Code", "Course Name", "Cr", "Grade", "GP", "QP"]
+        raw_rows = []
+        colored_rows = []
+        
+        for r in sem_records:
+            # We display all courses taken, even if not 'BEST' (like a real transcript would)
             gp = GRADE_POINTS.get(r.grade, 0.0)
-            qp_val = gp * r.credits
-            total_qp += qp_val
-            total_gc += r.credits
+            qp_val = gp * r.credits if r.grade not in ("W", "I", "T") else 0.0
+            
+            gp_str = f"{gp:.1f}" if r.grade not in ("W", "T") else "-"
+            qp_str = f"{qp_val:.1f}" if r.grade not in ("W", "T") else "-"
+            
             raw_rows.append([r.course_code, r.course_name[:28], str(r.credits),
-                             r.grade, f"{gp:.1f}", f"{qp_val:.1f}"])
+                             r.grade, gp_str, qp_str])
             colored_rows.append([r.course_code, r.course_name[:28], str(r.credits),
-                                 grade_color(r.grade), f"{gp:.1f}", f"{qp_val:.1f}"])
+                                 grade_color(r.grade), gp_str, qp_str])
 
-    col_widths = []
-    for i, h in enumerate(headers):
-        max_w = len(h)
-        for row in raw_rows:
-            max_w = max(max_w, len(str(row[i])))
-        col_widths.append(max_w + 2)
+        col_widths = []
+        for i, h in enumerate(headers):
+            max_w = len(h)
+            for row in raw_rows:
+                max_w = max(max_w, len(str(row[i])))
+            col_widths.append(max_w + 2)
 
-    sep = "+" + "+".join("-" * w for w in col_widths) + "+"
+        sep = "+" + "+".join("-" * w for w in col_widths) + "+"
 
-    def fmt_row(vals, raw_vals=None):
-        cells = []
-        for i, v in enumerate(vals):
-            w = col_widths[i] if i < len(col_widths) else 12
-            raw_len = len(str(raw_vals[i])) if raw_vals else len(str(v))
-            padding = w - 1 - raw_len
-            cells.append(f" {v}{' ' * max(0, padding)}")
-        return "|" + "|".join(cells) + "|"
+        def fmt_row(vals, raw_vals=None):
+            cells = []
+            for i, v in enumerate(vals):
+                w = col_widths[i] if i < len(col_widths) else 12
+                raw_len = len(str(raw_vals[i])) if raw_vals else len(str(v))
+                padding = w - 1 - raw_len
+                cells.append(f" {v}{' ' * max(0, padding)}")
+            return "|" + "|".join(cells) + "|"
 
-    print(sep)
-    print(fmt_row(headers, headers))
-    print(sep)
-    for i, row in enumerate(colored_rows):
-        print(fmt_row(row, raw_rows[i]))
-    print(sep)
-    print(f"  Total GPA Credits: {total_gc}   Total QP: {total_qp:.2f}   CGPA: {cgpa:.2f}")
+        print(sep)
+        print(fmt_row(headers, headers))
+        print(sep)
+        for i, row in enumerate(colored_rows):
+            print(fmt_row(row, raw_rows[i]))
+        print(sep)
+        print(f"  Snapshot ->  Cum. Credits: {snap_credits}   Cum. CGPA: {snap_cgpa:.2f}   Standing: {snap_standing}")
+        print()
 
     # Academic Standing Detail
-    if "PROBATION" in standing or "DISMISSAL" in standing:
+    if dismissed:
+        print(section_bar("ACADEMIC STANDING"))
+        print(f"  Status: {color('DISMISSAL', RED)}")
+        print(f"  {color('Transcript Halt: Student has been academically dismissed.', RED)}")
+        print(f"  {color('Action Required: Contact Academic Advising immediately.', RED)}")
+    elif "PROBATION" in standing:
         print(section_bar("ACADEMIC STANDING"))
         print(f"  Status: {color(standing, RED)}")
         if "P2" in standing:
             print(f"  {color('Warning: This is your LAST semester on probation before dismissal.', YELLOW)}")
-        elif "DISMISSAL" in standing:
-            print(f"  {color('Action Required: Contact Academic Advising immediately.', RED)}")
 
     # Waivers
     print(section_bar("WAIVER STATUS"))
@@ -261,6 +308,18 @@ Examples:
 
     # Level 1: Credit tallying (prerequisite)
     records, credits_attempted, credits_earned = process_transcript(args.transcript)
+
+    from engine.course_db import ALL_COURSES
+    unrecognized = set(r.course_code for r in records if r.course_code not in ALL_COURSES and r.grade not in ("W", "I"))
+    if unrecognized:
+        print(header_bar(f"LEVEL 2 — CGPA & STANDING REPORT ({program})"))
+        print(f"  Transcript File  : {os.path.basename(args.transcript)}")
+        print(f"\n  {color('!!! FAKE TRANSCRIPT DETECTED !!!', RED)}")
+        print(f"  Unrecognized Course Codes: {color(', '.join(unrecognized), RED)}")
+        print(f"  This transcript contains courses that do not exist in the NSU database.")
+        print(f"  {color('AUDIT ABORTED', RED)}")
+        print(f"  {'-' * 46}\n")
+        sys.exit(1)
 
     # Ask user about waivers (skips if already in transcript)
     user_waivers, new_waivers = ask_waivers(program, records)

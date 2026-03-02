@@ -59,7 +59,9 @@ def compute_cgpa(records):
         return 0.0, 0.0, 0
 
     cgpa = total_quality_points / total_gpa_credits
-    return round(cgpa, 2), round(total_quality_points, 2), total_gpa_credits
+    # Strict NSU Truncation: 1.996 -> 1.99 (Do not round up)
+    truncated_cgpa = int(cgpa * 100) / 100.0
+    return truncated_cgpa, round(total_quality_points, 2), total_gpa_credits
 
 
 def compute_major_cgpa(records, major_course_codes):
@@ -86,7 +88,10 @@ def compute_major_cgpa(records, major_course_codes):
 
     if total_cr == 0:
         return 0.0
-    return round(total_qp / total_cr, 2)
+        
+    major_cgpa = total_qp / total_cr
+    # Strict NSU Truncation
+    return int(major_cgpa * 100) / 100.0
 
 
 def determine_standing(cgpa):
@@ -143,12 +148,11 @@ def calculate_probation_history(records):
 
 def check_waivers_cse(records):
     """
-    CSE waiver logic for ENG102 and MAT116.
+    CSE waiver logic for ENG102.
     ENG102 (3-credit): waived if scored >=60% on English admission test.
-    MAT116 (0-credit): waived if scored >=60% on Math admission test.
     Returns dict with waiver info and credit reduction.
     """
-    waivers = {"ENG102": False, "MAT116": False}
+    waivers = {"ENG102": False}
     credit_reduction = 0
     for r in records:
         if r.course_code == "ENG102":
@@ -157,12 +161,6 @@ def check_waivers_cse(records):
                 credit_reduction += 3  # ENG102 is 3 credits
             elif r.status in ("BEST", "WAIVED") and r.grade not in ("F", "I", "W"):
                 waivers["ENG102"] = True  # Passed, so satisfied
-        if r.course_code == "MAT116":
-            if r.grade == "T":
-                waivers["MAT116"] = True
-                # MAT116 is 0 credits, no reduction
-            elif r.status in ("BEST",) and r.grade not in ("F", "I", "W"):
-                waivers["MAT116"] = True  # Passed normally
     return waivers, credit_reduction
 
 
@@ -196,13 +194,12 @@ def check_waivers_bba(records):
 def check_waivers_from_input(program, user_waivers):
     """
     Accept user-provided waiver dict and compute credit reduction.
-    user_waivers: dict like {"ENG102": True, "MAT116": False}
+    user_waivers: dict like {"ENG102": True, "BUS112": False}
     """
     credit_reduction = 0
     if program.upper() == "CSE":
         if user_waivers.get("ENG102", False):
             credit_reduction += 3
-        # MAT116 is 0 credits, no reduction
     else:
         if user_waivers.get("ENG102", False):
             credit_reduction += 3
